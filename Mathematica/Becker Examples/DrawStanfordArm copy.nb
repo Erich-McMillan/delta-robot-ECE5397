@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    253689,       4827]
-NotebookOptionsPosition[    251957,       4763]
-NotebookOutlinePosition[    252311,       4779]
-CellTagsIndexPosition[    252268,       4776]
+NotebookDataLength[    253470,       4828]
+NotebookOptionsPosition[    251738,       4764]
+NotebookOutlinePosition[    252092,       4780]
+CellTagsIndexPosition[    252049,       4777]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -26,261 +26,261 @@ Cell["Animate a Stanford Arm", "Subchapter",
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"(*", 
-  RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"Module", "[", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"jr", " ", "=", " ", 
-         RowBox[{"1", "/", "10"}]}], ",", 
-        RowBox[{"ar", " ", "=", " ", 
-         RowBox[{"1", "/", "40"}]}], ",", "\[IndentingNewLine]", 
-        RowBox[{"j1", "=", "\"\<Revolute\>\""}], ",", "  ", 
-        RowBox[{"r1", "=", "0"}], ",", 
-        RowBox[{"\[Alpha]1", "=", 
-         RowBox[{
-          RowBox[{"-", "\[Pi]"}], "/", "2"}]}], ",", 
-        RowBox[{"d1", " ", "=", " ", "1"}], ",", " ", "\[IndentingNewLine]", 
-        RowBox[{"j2", "=", "\"\<Revolute\>\""}], ",", "  ", 
-        RowBox[{"r2", "=", "0"}], ",", 
-        RowBox[{"\[Alpha]2", "=", 
-         RowBox[{"\[Pi]", "/", "2"}]}], ",", 
-        RowBox[{"d2", "=", " ", "1"}], ",", " ", "\[IndentingNewLine]", 
-        RowBox[{"j3", "=", "\"\<Prismatic\>\""}], ",", 
-        RowBox[{"r3", "=", "0"}], ",", 
-        RowBox[{"\[Alpha]3", "=", "0"}], ",", 
-        RowBox[{"\[Theta]3", "=", " ", "0"}], ",", " ", "\[IndentingNewLine]", 
-        RowBox[{"j4", "=", "\"\<Revolute\>\""}], ",", "  ", 
-        RowBox[{"r4", "=", "0"}], ",", 
-        RowBox[{"\[Alpha]4", "=", 
-         RowBox[{
-          RowBox[{"-", "\[Pi]"}], "/", "2"}]}], ",", 
-        RowBox[{"d4", "=", " ", 
-         RowBox[{"1", "/", "2"}]}], ",", " ", "\[IndentingNewLine]", 
-        RowBox[{"j5", "=", "\"\<Revolute\>\""}], ",", "  ", 
-        RowBox[{"r5", "=", "0"}], ",", 
-        RowBox[{"\[Alpha]5", "=", 
-         RowBox[{"\[Pi]", "/", "2"}]}], ",", 
-        RowBox[{"d5", "=", " ", "0"}], ",", " ", "\[IndentingNewLine]", 
-        RowBox[{"j6", "=", "\"\<Revolute\>\""}], ",", "  ", 
-        RowBox[{"r6", "=", "0"}], ",", 
-        RowBox[{"\[Alpha]6", "=", "0"}], ",", 
-        RowBox[{"d6", "=", " ", 
-         RowBox[{"2", "/", "3"}]}], ",", "\[IndentingNewLine]", "A1", ",", 
-        "A2", ",", "A3", ",", "A4", ",", "A5", ",", "A6"}], 
-       "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
       RowBox[{
-       RowBox[{"A1", " ", "=", " ", 
-        RowBox[{"DHTransform", "[", 
-         RowBox[{"d1", ",", "r1", ",", "\[Theta]1", ",", "\[Alpha]1"}], 
-         "]"}]}], ";", " ", 
-       RowBox[{"(*", " ", 
+       RowBox[{"jr", " ", "=", " ", 
+        RowBox[{"1", "/", "10"}]}], ",", 
+       RowBox[{"ar", " ", "=", " ", 
+        RowBox[{"1", "/", "40"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"j1", "=", "\"\<Revolute\>\""}], ",", "  ", 
+       RowBox[{"r1", "=", "0"}], ",", 
+       RowBox[{"\[Alpha]1", "=", 
         RowBox[{
-        "perform", " ", "transformation", " ", "between", " ", "each", " ", 
-         "joint"}], "*)"}], "\[IndentingNewLine]", 
-       RowBox[{"A2", " ", "=", " ", 
-        RowBox[{"DHTransform", "[", 
-         RowBox[{"d2", ",", "r2", ",", "\[Theta]2", ",", "\[Alpha]2"}], 
-         "]"}]}], ";", "\[IndentingNewLine]", 
-       RowBox[{"A3", " ", "=", " ", 
-        RowBox[{"DHTransform", "[", 
-         RowBox[{"d3", ",", "r3", ",", "\[Theta]3", ",", "\[Alpha]3"}], 
-         "]"}]}], ";", "\[IndentingNewLine]", 
-       RowBox[{"A4", " ", "=", " ", 
-        RowBox[{"DHTransform", "[", 
-         RowBox[{"d4", ",", "r4", ",", "\[Theta]4", ",", "\[Alpha]4"}], 
-         "]"}]}], ";", " ", "\[IndentingNewLine]", 
-       RowBox[{"A5", " ", "=", " ", 
-        RowBox[{"DHTransform", "[", 
-         RowBox[{"d5", ",", "r5", ",", "\[Theta]5", ",", "\[Alpha]5"}], 
-         "]"}]}], ";", "\[IndentingNewLine]", 
-       RowBox[{"A6", " ", "=", " ", 
-        RowBox[{"DHTransform", "[", 
-         RowBox[{"d6", ",", "r6", ",", "\[Theta]6", ",", "\[Alpha]6"}], 
-         "]"}]}], ";", "\[IndentingNewLine]", 
-       RowBox[{"Graphics3D", "[", 
+         RowBox[{"-", "\[Pi]"}], "/", "2"}]}], ",", 
+       RowBox[{"d1", " ", "=", " ", "1"}], ",", " ", "\[IndentingNewLine]", 
+       RowBox[{"j2", "=", "\"\<Revolute\>\""}], ",", "  ", 
+       RowBox[{"r2", "=", "0"}], ",", 
+       RowBox[{"\[Alpha]2", "=", 
+        RowBox[{"\[Pi]", "/", "2"}]}], ",", 
+       RowBox[{"d2", "=", " ", "1"}], ",", " ", "\[IndentingNewLine]", 
+       RowBox[{"j3", "=", "\"\<Prismatic\>\""}], ",", 
+       RowBox[{"r3", "=", "0"}], ",", 
+       RowBox[{"\[Alpha]3", "=", "0"}], ",", 
+       RowBox[{"\[Theta]3", "=", " ", "0"}], ",", " ", "\[IndentingNewLine]", 
+       
+       RowBox[{"j4", "=", "\"\<Revolute\>\""}], ",", "  ", 
+       RowBox[{"r4", "=", "0"}], ",", 
+       RowBox[{"\[Alpha]4", "=", 
         RowBox[{
-         RowBox[{"{", "\[IndentingNewLine]", 
-          RowBox[{"(*", "ground", "*)"}], "\[IndentingNewLine]", 
-          RowBox[{
-           RowBox[{"{", 
-            RowBox[{"LightBrown", ",", 
-             RowBox[{"Cylinder", "[", 
-              RowBox[{
-               RowBox[{"{", 
-                RowBox[{
-                 RowBox[{"{", 
-                  RowBox[{"0", ",", "0", ",", 
-                   RowBox[{
-                    RowBox[{"-", "2"}], "/", "5"}]}], "}"}], ",", 
-                 RowBox[{"{", 
-                  RowBox[{"0", ",", "0", ",", 
-                   RowBox[{
-                    RowBox[{
-                    RowBox[{"-", "1"}], "/", "5"}], "-", 
-                    RowBox[{"1", "/", "20"}]}]}], "}"}]}], "}"}], ",", 
-               "2.2"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
-           RowBox[{"DrawJoint", "[", " ", 
-            RowBox[{"j1", ",", "d1", ",", "r1", ",", "\[Theta]1"}], "]"}], 
-           ",", "\[IndentingNewLine]", 
-           RowBox[{"If", "[", 
-            RowBox[{"showRobot", ",", 
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{"GeometricTransformation", "[", 
-                RowBox[{
-                 RowBox[{"DrawJoint", "[", " ", 
-                  RowBox[{"j2", ",", "d2", ",", "r2", ",", "\[Theta]2"}], 
-                  "]"}], ",", "A1"}], "]"}], ",", "\[IndentingNewLine]", 
-               RowBox[{"GeometricTransformation", "[", 
-                RowBox[{
-                 RowBox[{"DrawJoint", "[", " ", 
-                  RowBox[{"j3", ",", "d3", ",", "r3", ",", "\[Theta]3"}], 
-                  "]"}], ",", 
-                 RowBox[{"A1", ".", "A2"}]}], "]"}], ",", 
-               "\[IndentingNewLine]", 
-               RowBox[{"GeometricTransformation", "[", 
-                RowBox[{
-                 RowBox[{"DrawJoint", "[", " ", 
-                  RowBox[{"j4", ",", "d4", ",", "r4", ",", "\[Theta]4"}], 
-                  "]"}], ",", 
-                 RowBox[{"A1", ".", "A2", ".", "A3"}]}], "]"}], ",", 
-               "\[IndentingNewLine]", 
-               RowBox[{"GeometricTransformation", "[", 
-                RowBox[{
-                 RowBox[{"DrawJoint", "[", " ", 
-                  RowBox[{"j5", ",", "d5", ",", "r5", ",", "\[Theta]5"}], 
-                  "]"}], ",", 
-                 RowBox[{"A1", ".", "A2", ".", "A3", ".", "A4"}]}], "]"}], 
-               ",", "\[IndentingNewLine]", 
-               RowBox[{"GeometricTransformation", "[", 
-                RowBox[{
-                 RowBox[{"DrawJoint", "[", " ", 
-                  RowBox[{"j6", ",", "d6", ",", "r6", ",", "\[Theta]6"}], 
-                  "]"}], ",", 
-                 RowBox[{"A1", ".", "A2", ".", "A3", ".", "A4", ".", "A5"}]}],
-                 "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
-             RowBox[{"GeometricTransformation", "[", 
-              RowBox[{
-               RowBox[{"DrawShaft", "[", " ", 
-                RowBox[{"j6", ",", "d6", ",", "r6", ",", "\[Theta]6"}], "]"}],
-                ",", 
-               RowBox[{"A1", ".", "A2", ".", "A3", ".", "A4", ".", "A5"}]}], 
-              "]"}]}], "]"}], ",", "\[IndentingNewLine]", 
-           RowBox[{"GeometricTransformation", "[", 
-            RowBox[{
-             RowBox[{"DrawGripper", "[", 
-              RowBox[{"g", ",", "0"}], "]"}], ",", 
+         RowBox[{"-", "\[Pi]"}], "/", "2"}]}], ",", 
+       RowBox[{"d4", "=", " ", 
+        RowBox[{"1", "/", "2"}]}], ",", " ", "\[IndentingNewLine]", 
+       RowBox[{"j5", "=", "\"\<Revolute\>\""}], ",", "  ", 
+       RowBox[{"r5", "=", "0"}], ",", 
+       RowBox[{"\[Alpha]5", "=", 
+        RowBox[{"\[Pi]", "/", "2"}]}], ",", 
+       RowBox[{"d5", "=", " ", "0"}], ",", " ", "\[IndentingNewLine]", 
+       RowBox[{"j6", "=", "\"\<Revolute\>\""}], ",", "  ", 
+       RowBox[{"r6", "=", "0"}], ",", 
+       RowBox[{"\[Alpha]6", "=", "0"}], ",", 
+       RowBox[{"d6", "=", " ", 
+        RowBox[{"2", "/", "3"}]}], ",", "\[IndentingNewLine]", "A1", ",", 
+       "A2", ",", "A3", ",", "A4", ",", "A5", ",", "A6"}], 
+      "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"A1", " ", "=", " ", 
+       RowBox[{"DHTransform", "[", 
+        RowBox[{"d1", ",", "r1", ",", "\[Theta]1", ",", "\[Alpha]1"}], 
+        "]"}]}], ";", " ", 
+      RowBox[{"(*", " ", 
+       RowBox[{
+       "perform", " ", "transformation", " ", "between", " ", "each", " ", 
+        "joint"}], "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"A2", " ", "=", " ", 
+       RowBox[{"DHTransform", "[", 
+        RowBox[{"d2", ",", "r2", ",", "\[Theta]2", ",", "\[Alpha]2"}], 
+        "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"A3", " ", "=", " ", 
+       RowBox[{"DHTransform", "[", 
+        RowBox[{"d3", ",", "r3", ",", "\[Theta]3", ",", "\[Alpha]3"}], 
+        "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"A4", " ", "=", " ", 
+       RowBox[{"DHTransform", "[", 
+        RowBox[{"d4", ",", "r4", ",", "\[Theta]4", ",", "\[Alpha]4"}], 
+        "]"}]}], ";", " ", "\[IndentingNewLine]", 
+      RowBox[{"A5", " ", "=", " ", 
+       RowBox[{"DHTransform", "[", 
+        RowBox[{"d5", ",", "r5", ",", "\[Theta]5", ",", "\[Alpha]5"}], 
+        "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"A6", " ", "=", " ", 
+       RowBox[{"DHTransform", "[", 
+        RowBox[{"d6", ",", "r6", ",", "\[Theta]6", ",", "\[Alpha]6"}], 
+        "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Graphics3D", "[", 
+       RowBox[{
+        RowBox[{"{", "\[IndentingNewLine]", 
+         RowBox[{"(*", "ground", "*)"}], "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"LightBrown", ",", 
+            RowBox[{"Cylinder", "[", 
              RowBox[{
-             "A1", ".", "A2", ".", "A3", ".", "A4", ".", "A5", ".", "A6"}]}], 
-            "]"}], ",", "\[IndentingNewLine]", 
-           RowBox[{"Text", "[", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"0", ",", "0", ",", 
+                  RowBox[{
+                   RowBox[{"-", "2"}], "/", "5"}]}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"0", ",", "0", ",", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{"-", "1"}], "/", "5"}], "-", 
+                   RowBox[{"1", "/", "20"}]}]}], "}"}]}], "}"}], ",", "2.2"}],
+              "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"DrawJoint", "[", " ", 
+           RowBox[{"j1", ",", "d1", ",", "r1", ",", "\[Theta]1"}], "]"}], ",",
+           "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{"showRobot", ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"GeometricTransformation", "[", 
+               RowBox[{
+                RowBox[{"DrawJoint", "[", " ", 
+                 RowBox[{"j2", ",", "d2", ",", "r2", ",", "\[Theta]2"}], 
+                 "]"}], ",", "A1"}], "]"}], ",", "\[IndentingNewLine]", 
+              RowBox[{"GeometricTransformation", "[", 
+               RowBox[{
+                RowBox[{"DrawJoint", "[", " ", 
+                 RowBox[{"j3", ",", "d3", ",", "r3", ",", "\[Theta]3"}], 
+                 "]"}], ",", 
+                RowBox[{"A1", ".", "A2"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"GeometricTransformation", "[", 
+               RowBox[{
+                RowBox[{"DrawJoint", "[", " ", 
+                 RowBox[{"j4", ",", "d4", ",", "r4", ",", "\[Theta]4"}], 
+                 "]"}], ",", 
+                RowBox[{"A1", ".", "A2", ".", "A3"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"GeometricTransformation", "[", 
+               RowBox[{
+                RowBox[{"DrawJoint", "[", " ", 
+                 RowBox[{"j5", ",", "d5", ",", "r5", ",", "\[Theta]5"}], 
+                 "]"}], ",", 
+                RowBox[{"A1", ".", "A2", ".", "A3", ".", "A4"}]}], "]"}], ",",
+               "\[IndentingNewLine]", 
+              RowBox[{"GeometricTransformation", "[", 
+               RowBox[{
+                RowBox[{"DrawJoint", "[", " ", 
+                 RowBox[{"j6", ",", "d6", ",", "r6", ",", "\[Theta]6"}], 
+                 "]"}], ",", 
+                RowBox[{"A1", ".", "A2", ".", "A3", ".", "A4", ".", "A5"}]}], 
+               "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"GeometricTransformation", "[", 
+             RowBox[{
+              RowBox[{"DrawShaft", "[", " ", 
+               RowBox[{"j6", ",", "d6", ",", "r6", ",", "\[Theta]6"}], "]"}], 
+              ",", 
+              RowBox[{"A1", ".", "A2", ".", "A3", ".", "A4", ".", "A5"}]}], 
+             "]"}]}], "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"GeometricTransformation", "[", 
+           RowBox[{
+            RowBox[{"DrawGripper", "[", 
+             RowBox[{"g", ",", "0"}], "]"}], ",", 
             RowBox[{
-             RowBox[{"StringForm", "[", 
-              RowBox[{"\"\<\!\(\*
+            "A1", ".", "A2", ".", "A3", ".", "A4", ".", "A5", ".", "A6"}]}], 
+           "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Text", "[", 
+           RowBox[{
+            RowBox[{"StringForm", "[", 
+             RowBox[{"\"\<\!\(\*
 StyleBox[\"H\",
 FontSlant->\"Italic\"]\)=``\>\"", ",", 
-               RowBox[{"MatrixForm", "[", 
-                RowBox[{"N", "[", 
+              RowBox[{"MatrixForm", "[", 
+               RowBox[{"N", "[", 
+                RowBox[{
                  RowBox[{
-                  RowBox[{
-                  "A1", ".", "A2", ".", "A3", ".", "A4", ".", "A5", ".", 
-                   "A6"}], ",", "2"}], "]"}], "]"}]}], "]"}], ",", 
-             RowBox[{"{", 
-              RowBox[{"0", ",", "0", ",", 
-               RowBox[{"-", "3.2"}]}], "}"}]}], "]"}]}], 
-          "\[IndentingNewLine]", "}"}], ",", 
-         RowBox[{"SphericalRegion", "\[Rule]", "True"}], ",", 
-         RowBox[{"ImageSize", "\[Rule]", "425"}], ",", 
-         RowBox[{"Boxed", "\[Rule]", "False"}]}], "]"}]}]}], "]"}], ",", 
-    "\[IndentingNewLine]", "\[IndentingNewLine]", 
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-       "\[Theta]1", ",", "0", ",", 
-        "\"\<\!\(\*SubscriptBox[\(\[Theta]\), \(1\)]\)\>\""}], "}"}], ",", 
-      RowBox[{"-", "\[Pi]"}], ",", "\[Pi]", ",", 
-      RowBox[{"\[Pi]", "/", "32"}], ",", 
-      RowBox[{"ImageSize", "\[Rule]", "Small"}], ",", 
-      RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
-    "\[IndentingNewLine]", 
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-       "\[Theta]2", ",", "0", ",", 
-        "\"\<\!\(\*SubscriptBox[\(\[Theta]\), \(2\)]\)\>\""}], "}"}], ",", 
-      RowBox[{"-", "\[Pi]"}], ",", "\[Pi]", ",", 
-      RowBox[{"\[Pi]", "/", "32"}], ",", 
-      RowBox[{"ImageSize", "\[Rule]", "Small"}], ",", 
-      RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
-    "\[IndentingNewLine]", 
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{"d3", ",", 
-        RowBox[{"1", "/", "2"}], ",", 
-        "\"\<\!\(\*SubscriptBox[\(d\), \(3\)]\)\>\""}], "}"}], ",", "0", ",", 
-      "1", ",", 
-      RowBox[{"1", "/", "20"}], ",", 
-      RowBox[{"ImageSize", "\[Rule]", "Small"}], ",", 
-      RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
-    "\[IndentingNewLine]", 
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-       "\[Theta]4", ",", "0", ",", 
-        "\"\<\!\(\*SubscriptBox[\(\[Theta]\), \(4\)]\)\>\""}], "}"}], ",", 
-      RowBox[{"-", "\[Pi]"}], ",", "\[Pi]", ",", 
-      RowBox[{"\[Pi]", "/", "32"}], ",", 
-      RowBox[{"ImageSize", "\[Rule]", "Small"}], ",", 
-      RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
-    "\[IndentingNewLine]", 
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-       "\[Theta]5", ",", "0", ",", 
-        "\"\<\!\(\*SubscriptBox[\(\[Theta]\), \(5\)]\)\>\""}], "}"}], ",", 
-      RowBox[{"-", "\[Pi]"}], ",", "\[Pi]", ",", 
-      RowBox[{"\[Pi]", "/", "32"}], ",", 
-      RowBox[{"ImageSize", "\[Rule]", "Small"}], ",", 
-      RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
-    "\[IndentingNewLine]", 
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-       "\[Theta]6", ",", "0", ",", 
-        "\"\<\!\(\*SubscriptBox[\(\[Theta]\), \(6\)]\)\>\""}], "}"}], ",", 
-      RowBox[{"-", "\[Pi]"}], ",", "\[Pi]", ",", 
-      RowBox[{"\[Pi]", "/", "32"}], ",", 
-      RowBox[{"ImageSize", "\[Rule]", "Small"}], ",", 
-      RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
-    "\[IndentingNewLine]", "Delimiter", ",", "\[IndentingNewLine]", 
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{"g", ",", "1", ",", "\"\<grip\>\""}], "}"}], ",", "0", ",", 
-      "1", ",", "0.01", ",", 
-      RowBox[{"ImageSize", "\[Rule]", "Small"}], ",", 
-      RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
-    "\[IndentingNewLine]", 
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{"showRobot", ",", "True", ",", "\"\<show robot\>\""}], "}"}], 
-      ",", 
-      RowBox[{"{", 
-       RowBox[{"True", ",", "False"}], "}"}]}], "}"}], ",", 
-    RowBox[{"ControlPlacement", "\[Rule]", "Left"}], ",", 
-    "\[IndentingNewLine]", 
-    RowBox[{"SaveDefinitions", "\[Rule]", "True"}]}], "\[IndentingNewLine]", 
-   "]"}], "*)"}]], "Input",
+                 "A1", ".", "A2", ".", "A3", ".", "A4", ".", "A5", ".", 
+                  "A6"}], ",", "2"}], "]"}], "]"}]}], "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", 
+              RowBox[{"-", "3.2"}]}], "}"}]}], "]"}]}], "\[IndentingNewLine]",
+          "}"}], ",", 
+        RowBox[{"SphericalRegion", "\[Rule]", "True"}], ",", 
+        RowBox[{"ImageSize", "\[Rule]", "425"}], ",", 
+        RowBox[{"Boxed", "\[Rule]", "False"}]}], "]"}]}]}], "]"}], ",", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "\[Theta]1", ",", "0", ",", 
+       "\"\<\!\(\*SubscriptBox[\(\[Theta]\), \(1\)]\)\>\""}], "}"}], ",", 
+     RowBox[{"-", "\[Pi]"}], ",", "\[Pi]", ",", 
+     RowBox[{"\[Pi]", "/", "32"}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Small"}], ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "\[Theta]2", ",", "0", ",", 
+       "\"\<\!\(\*SubscriptBox[\(\[Theta]\), \(2\)]\)\>\""}], "}"}], ",", 
+     RowBox[{"-", "\[Pi]"}], ",", "\[Pi]", ",", 
+     RowBox[{"\[Pi]", "/", "32"}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Small"}], ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"d3", ",", 
+       RowBox[{"1", "/", "2"}], ",", 
+       "\"\<\!\(\*SubscriptBox[\(d\), \(3\)]\)\>\""}], "}"}], ",", "0", ",", 
+     "1", ",", 
+     RowBox[{"1", "/", "20"}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Small"}], ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "\[Theta]4", ",", "0", ",", 
+       "\"\<\!\(\*SubscriptBox[\(\[Theta]\), \(4\)]\)\>\""}], "}"}], ",", 
+     RowBox[{"-", "\[Pi]"}], ",", "\[Pi]", ",", 
+     RowBox[{"\[Pi]", "/", "32"}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Small"}], ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "\[Theta]5", ",", "0", ",", 
+       "\"\<\!\(\*SubscriptBox[\(\[Theta]\), \(5\)]\)\>\""}], "}"}], ",", 
+     RowBox[{"-", "\[Pi]"}], ",", "\[Pi]", ",", 
+     RowBox[{"\[Pi]", "/", "32"}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Small"}], ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "\[Theta]6", ",", "0", ",", 
+       "\"\<\!\(\*SubscriptBox[\(\[Theta]\), \(6\)]\)\>\""}], "}"}], ",", 
+     RowBox[{"-", "\[Pi]"}], ",", "\[Pi]", ",", 
+     RowBox[{"\[Pi]", "/", "32"}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Small"}], ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", "Delimiter", ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"g", ",", "1", ",", "\"\<grip\>\""}], "}"}], ",", "0", ",", "1",
+      ",", "0.01", ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Small"}], ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"showRobot", ",", "True", ",", "\"\<show robot\>\""}], "}"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"True", ",", "False"}], "}"}]}], "}"}], ",", 
+   RowBox[{"ControlPlacement", "\[Rule]", "Left"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"SaveDefinitions", "\[Rule]", "True"}]}], "\[IndentingNewLine]", 
+  "]"}]], "Input",
  CellChangeTimes->{{3.6727676151870728`*^9, 3.6727676333838625`*^9}, {
    3.674401930038636*^9, 3.674401931946322*^9}, {3.674402039308111*^9, 
    3.6744020677860327`*^9}, {3.674402146199163*^9, 3.6744022012620068`*^9}, {
@@ -293,7 +293,8 @@ FontSlant->\"Italic\"]\)=``\>\"", ",",
    3.696074829243869*^9, 3.696074835059648*^9}, {3.696074883039323*^9, 
    3.69607502997849*^9}, {3.6960758954679413`*^9, 3.696075947132622*^9}, {
    3.6960759826000767`*^9, 3.6960760028229647`*^9}, 3.696087183043738*^9, {
-   3.696089958031266*^9, 3.696089967859531*^9}}],
+   3.696089958031266*^9, 3.696089967859531*^9}, {3.70154668121496*^9, 
+   3.701546683932481*^9}}],
 
 Cell[BoxData[
  TagBox[
@@ -4781,51 +4782,51 @@ Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 110, 1, 63, "Subchapter"],
 Cell[CellGroupData[{
-Cell[715, 27, 12071, 268, 873, "Input"],
-Cell[12789, 297, 15063, 299, 499, "Output"]
+Cell[715, 27, 11852, 269, 873, "Input"],
+Cell[12570, 298, 15063, 299, 499, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[27889, 601, 12446, 276, 852, "Input"],
-Cell[40338, 879, 15195, 297, 499, "Output"]
+Cell[27670, 602, 12446, 276, 852, "Input"],
+Cell[40119, 880, 15195, 297, 499, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[55582, 1182, 147912, 2279, 255, "Subchapter"],
+Cell[55363, 1183, 147912, 2279, 255, "Subchapter"],
 Cell[CellGroupData[{
-Cell[203519, 3465, 395, 8, 54, "Input"],
-Cell[203917, 3475, 242, 3, 32, "Output"],
+Cell[203300, 3466, 395, 8, 54, "Input"],
+Cell[203698, 3476, 242, 3, 32, "Output"],
 Cell[CellGroupData[{
-Cell[204184, 3482, 897, 15, 24, "Print"],
-Cell[205084, 3499, 762, 11, 24, "Print"],
-Cell[205849, 3512, 722, 10, 24, "Print"],
-Cell[206574, 3524, 1014, 18, 24, "Print"]
+Cell[203965, 3483, 897, 15, 24, "Print"],
+Cell[204865, 3500, 762, 11, 24, "Print"],
+Cell[205630, 3513, 722, 10, 24, "Print"],
+Cell[206355, 3525, 1014, 18, 24, "Print"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[207637, 3548, 177, 4, 32, "Input"],
+Cell[207418, 3549, 177, 4, 32, "Input"],
 Cell[CellGroupData[{
-Cell[207839, 3556, 146, 2, 24, "Print"],
-Cell[207988, 3560, 201, 5, 24, "Print"],
-Cell[208192, 3567, 6935, 236, 127, "Print"]
+Cell[207620, 3557, 146, 2, 24, "Print"],
+Cell[207769, 3561, 201, 5, 24, "Print"],
+Cell[207973, 3568, 6935, 236, 127, "Print"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[215176, 3809, 315, 7, 32, "Input"],
+Cell[214957, 3810, 315, 7, 32, "Input"],
 Cell[CellGroupData[{
-Cell[215516, 3820, 444, 7, 24, "Print"],
-Cell[215963, 3829, 588, 9, 44, "Print"],
-Cell[216554, 3840, 658, 12, 24, "Print"]
+Cell[215297, 3821, 444, 7, 24, "Print"],
+Cell[215744, 3830, 588, 9, 44, "Print"],
+Cell[216335, 3841, 658, 12, 24, "Print"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[217261, 3858, 502, 12, 54, "Input"],
-Cell[217766, 3872, 5599, 150, 91, "Output"]
+Cell[217042, 3859, 502, 12, 54, "Input"],
+Cell[217547, 3873, 5599, 150, 91, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[223402, 4027, 568, 13, 54, "Input"],
-Cell[223973, 4042, 11378, 288, 105, "Output"]
+Cell[223183, 4028, 568, 13, 54, "Input"],
+Cell[223754, 4043, 11378, 288, 105, "Output"]
 }, Open  ]],
-Cell[235366, 4333, 16575, 427, 1015, "Input",
+Cell[235147, 4334, 16575, 427, 1015, "Input",
  InitializationCell->True,
  CellID->358503338]
 }, Open  ]]
