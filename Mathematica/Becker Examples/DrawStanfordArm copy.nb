@@ -450,7 +450,7 @@ $CellContext`A4$, $CellContext`A5$, $CellContext`A6$], 2]]], {0, 0, -3.2}]},
          "Labeled"}, {{$CellContext`showRobot$$, True, "show robot"}, {
          True, False}}}, "Options" :> {ControlPlacement -> Left}, 
       "DefaultOptions" :> {}],
-     ImageSizeCache->{675., {238., 244.}},
+     ImageSizeCache->{675., {240., 245.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -4783,7 +4783,7 @@ Cell[CellGroupData[{
 Cell[580, 22, 110, 1, 63, "Subchapter"],
 Cell[CellGroupData[{
 Cell[715, 27, 11852, 269, 873, "Input"],
-Cell[12570, 298, 15063, 299, 499, "Output"]
+Cell[12570, 298, 15063, 299, 502, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[27670, 602, 12446, 276, 852, "Input"],
