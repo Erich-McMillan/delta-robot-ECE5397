@@ -1,0 +1,3 @@
+table on bottom
+show possible range of current slider
+prevent from going out of range

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     79165,       1960]
-NotebookOptionsPosition[     78525,       1936]
-NotebookOutlinePosition[     78881,       1952]
-CellTagsIndexPosition[     78838,       1949]
+NotebookDataLength[    117264,       2798]
+NotebookOptionsPosition[    115991,       2758]
+NotebookOutlinePosition[    116345,       2774]
+CellTagsIndexPosition[    116302,       2771]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -37,9 +37,8 @@ Cell[BoxData[
        RowBox[{"\[Mu]p", "=", "44"}], ",", 
        RowBox[{"thicc", "=", "15"}], ",", 
        RowBox[{"dia", "=", "10"}], ",", 
-       RowBox[{"len", "=", "75"}], ",", "status", ",", "x", ",", "y", ",", 
-       "z", ",", "\[Theta]1", ",", "\[Theta]2", ",", "\[Theta]3"}], "}"}], 
-     ",", "\[IndentingNewLine]", 
+       RowBox[{"len", "=", "75"}], ",", "status"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
      RowBox[{
       RowBox[{"If", "[", 
        RowBox[{
@@ -49,9 +48,6 @@ Cell[BoxData[
           RowBox[{"calculate", " ", "inverse", " ", "kinematics"}], " ", 
           "*)"}], "\[IndentingNewLine]", 
          RowBox[{
-          RowBox[{"x", "=", "xs"}], ";", 
-          RowBox[{"y", "=", "ys"}], ";", 
-          RowBox[{"z", "=", "zs"}], ";", "\[IndentingNewLine]", 
           RowBox[{
            RowBox[{"{", 
             RowBox[{
@@ -59,104 +55,188 @@ Cell[BoxData[
             "}"}], "=", 
            RowBox[{"calcInverse", "[", 
             RowBox[{
-            "x", ",", "y", ",", "z", ",", "f", ",", "e", ",", "rf", ",", 
-             "re"}], "]"}]}], ";"}], "\[IndentingNewLine]", "}"}], ",", 
+            "xs", ",", "ys", ",", "zs", ",", "f", ",", "e", ",", "rf", ",", 
+             "re"}], "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"status", "\[NotEqual]", 
+              RowBox[{"-", "1"}]}], "&&", 
+             RowBox[{"\[Theta]1", "<", "100"}], "&&", 
+             RowBox[{"\[Theta]2", "<", "100"}], "&&", 
+             RowBox[{"\[Theta]3", "<", "100"}], "&&", 
+             RowBox[{"\[Theta]1", ">", 
+              RowBox[{"-", "80"}]}], "&&", 
+             RowBox[{"\[Theta]2", ">", 
+              RowBox[{"-", "80"}]}], "&&", 
+             RowBox[{"\[Theta]3", ">", 
+              RowBox[{"-", "80"}]}], "&&", 
+             RowBox[{"zs", "\[NotEqual]", "0"}]}], ",", "\[IndentingNewLine]", 
+            RowBox[{"{", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"\[Theta]1s", " ", "=", " ", "\[Theta]1"}], ";", 
+              RowBox[{"\[Theta]2s", " ", "=", " ", "\[Theta]2"}], ";", 
+              RowBox[{"\[Theta]3s", " ", "=", " ", "\[Theta]3"}], ";", 
+              RowBox[{"x", "=", "xs"}], ";", 
+              RowBox[{"y", "=", "ys"}], ";", 
+              RowBox[{"z", "=", "zs"}], ";"}], "\[IndentingNewLine]", "}"}], 
+            ",", 
+            RowBox[{"{", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"xs", "=", "x"}], ";", 
+              RowBox[{"ys", "=", "y"}], ";", 
+              RowBox[{"zs", "=", "z"}], ";"}], "\[IndentingNewLine]", "}"}]}],
+            "]"}], ";"}], "\[IndentingNewLine]", "}"}], ",", 
         RowBox[{"{", "\[IndentingNewLine]", 
          RowBox[{
-          RowBox[{"\[Theta]1", "=", "\[Theta]1s"}], ";", 
-          RowBox[{"\[Theta]2", "=", "\[Theta]2s"}], ";", 
-          RowBox[{"\[Theta]3", "=", "\[Theta]3s"}], ";", 
-          "\[IndentingNewLine]", 
           RowBox[{
            RowBox[{"{", 
             RowBox[{"status", ",", "x", ",", "y", ",", "z"}], "}"}], "=", 
            RowBox[{"calcForward", "[", 
             RowBox[{
-            "\[Theta]1", ",", "\[Theta]2", ",", "\[Theta]3", ",", "f", ",", 
-             "e", ",", "rf", ",", "re"}], "]"}]}], ";"}], 
-         "\[IndentingNewLine]", "}"}]}], "\[IndentingNewLine]", "]"}], ";", 
-      "\[IndentingNewLine]", "\[IndentingNewLine]", 
-      RowBox[{"(*", " ", 
-       RowBox[{"draw", " ", "robot"}], " ", "*)"}], "\[IndentingNewLine]", 
-      RowBox[{"Graphics3D", "[", 
-       RowBox[{
-        RowBox[{"{", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"drawBase", "[", 
-           RowBox[{"f", ",", "wb", ",", "\[Mu]b", ",", "thicc"}], "]"}], ",", 
-          "\[IndentingNewLine]", 
-          RowBox[{"drawEndEffector", "[", 
-           RowBox[{
-           "e", ",", "wp", ",", "\[Mu]p", ",", "thicc", ",", "dia", ",", 
-            "len", ",", 
-            RowBox[{"{", 
-             RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}], ",", 
+            "\[Theta]1s", ",", "\[Theta]2s", ",", "\[Theta]3s", ",", "f", ",",
+              "e", ",", "rf", ",", "re"}], "]"}]}], ";", 
           "\[IndentingNewLine]", 
           RowBox[{"If", "[", 
            RowBox[{
             RowBox[{
-             RowBox[{"status", " ", "\[Equal]", "0"}], "&&", 
-             RowBox[{"z", "!=", "0"}]}], ",", "\[IndentingNewLine]", 
+             RowBox[{"status", "\[NotEqual]", 
+              RowBox[{"-", "1"}]}], "&&", 
+             RowBox[{"z", "\[LessEqual]", "0"}], "&&", 
+             RowBox[{"\[Theta]1s", "<", "100"}], "&&", 
+             RowBox[{"\[Theta]2s", "<", "100"}], "&&", 
+             RowBox[{"\[Theta]3s", "<", "100"}], "&&", 
+             RowBox[{"\[Theta]1s", ">", 
+              RowBox[{"-", "80"}]}], "&&", 
+             RowBox[{"\[Theta]2s", ">", 
+              RowBox[{"-", "80"}]}], "&&", 
+             RowBox[{"\[Theta]3s", ">", 
+              RowBox[{"-", "80"}]}], "&&", 
+             RowBox[{"x", "<", "1200"}], "&&", 
+             RowBox[{"y", "<", "1200"}], "&&", 
+             RowBox[{"z", "<", 
+              RowBox[{"-", "250"}]}], "&&", 
+             RowBox[{"x", ">", 
+              RowBox[{"-", "1200"}]}], "&&", 
+             RowBox[{"y", ">", 
+              RowBox[{"-", "1200"}]}], "&&", 
+             RowBox[{"z", ">", 
+              RowBox[{"-", "1800"}]}]}], ",", "\[IndentingNewLine]", 
             RowBox[{"{", "\[IndentingNewLine]", 
              RowBox[{
-              RowBox[{"drawUpperArms", "[", 
-               RowBox[{"f", ",", "wb", ",", "rf", ",", 
-                RowBox[{"\[Pi]", "*", 
-                 RowBox[{"\[Theta]1", "/", "180"}]}], ",", 
-                RowBox[{"\[Pi]", "*", 
-                 RowBox[{"\[Theta]2", "/", "180"}]}], ",", 
-                RowBox[{"\[Pi]", "*", 
-                 RowBox[{"\[Theta]3", "/", "180"}]}], ",", "thicc", ",", 
-                "dia", ",", "len"}], "]"}], ",", "\[IndentingNewLine]", 
-              RowBox[{"drawLowerArms", "[", 
+              RowBox[{"\[Theta]1", "=", "\[Theta]1s"}], ";", 
+              RowBox[{"\[Theta]2", "=", "\[Theta]2s"}], ";", 
+              RowBox[{"\[Theta]3", "=", "\[Theta]3s"}], ";", 
+              RowBox[{"xs", "=", "x"}], ";", 
+              RowBox[{"ys", "=", "y"}], ";", 
+              RowBox[{"zs", "=", "z"}], ";"}], "\[IndentingNewLine]", "}"}], 
+            ",", 
+            RowBox[{"{", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"\[Theta]1s", " ", "=", " ", "\[Theta]1"}], ";", 
+              RowBox[{"\[Theta]2s", " ", "=", " ", "\[Theta]2"}], ";", 
+              RowBox[{"\[Theta]3s", " ", "=", " ", "\[Theta]3"}], ";"}], 
+             "\[IndentingNewLine]", "}"}]}], "]"}], ";"}], 
+         "\[IndentingNewLine]", "}"}]}], "]"}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{"draw", " ", "robot"}], " ", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"Show", "[", 
+       RowBox[{
+        RowBox[{"Graphics3D", "[", 
+         RowBox[{
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"drawBase", "[", 
+             RowBox[{"f", ",", "wb", ",", "\[Mu]b", ",", "thicc", ",", 
+              RowBox[{"{", 
+               RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"ViewCenter", "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{"250", ",", "250"}], "}"}]}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"drawBase", "[", 
+             RowBox[{
+              RowBox[{"f", "*", "3"}], ",", 
+              RowBox[{"wb", "*", "3"}], ",", 
+              RowBox[{"\[Mu]b", "*", "3"}], ",", "thicc", ",", 
+              RowBox[{"{", 
+               RowBox[{"0", ",", "0", ",", 
+                RowBox[{"-", "1800"}]}], "}"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"status", " ", "\[Equal]", "0"}], "&&", 
+               RowBox[{"zs", "\[NotEqual]", "0"}], "&&", 
+               RowBox[{"z", "\[NotEqual]", "0"}]}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"{", "\[IndentingNewLine]", 
                RowBox[{
-               "f", ",", "e", ",", "wb", ",", "wp", ",", "\[Mu]b", ",", 
-                "\[Mu]p", ",", "dia", ",", "len", ",", 
-                RowBox[{"{", 
-                 RowBox[{"x", ",", "y", ",", "z"}], "}"}], ",", 
-                RowBox[{"\[Pi]", "*", 
-                 RowBox[{"\[Theta]1", "/", "180"}]}], ",", 
-                RowBox[{"\[Pi]", "*", 
-                 RowBox[{"\[Theta]2", "/", "180"}]}], ",", 
-                RowBox[{"\[Pi]", "*", 
-                 RowBox[{"\[Theta]3", "/", "180"}]}]}], "]"}]}], 
-             "\[IndentingNewLine]", "}"}], ",", 
-            RowBox[{"{", "\[IndentingNewLine]", "}"}]}], 
-           "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "}"}], ",", 
-        
-        RowBox[{"Axes", "\[Rule]", "False"}], ",", " ", 
-        RowBox[{"SphericalRegion", "\[Rule]", "True"}], ",", " ", 
-        RowBox[{"Boxed", "\[Rule]", "False"}], ",", 
-        RowBox[{"ImageSize", "\[Rule]", "Large"}]}], "]"}]}]}], 
-    "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
+                RowBox[{"drawEndEffector", "[", 
+                 RowBox[{
+                 "e", ",", "wp", ",", "\[Mu]p", ",", "thicc", ",", "dia", ",",
+                   "len", ",", 
+                  RowBox[{"{", 
+                   RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}], ",", 
+                "\[IndentingNewLine]", 
+                RowBox[{"drawUpperArms", "[", 
+                 RowBox[{"f", ",", "wb", ",", "rf", ",", 
+                  RowBox[{"\[Pi]", "*", 
+                   RowBox[{"\[Theta]1", "/", "180"}]}], ",", 
+                  RowBox[{"\[Pi]", "*", 
+                   RowBox[{"\[Theta]2", "/", "180"}]}], ",", 
+                  RowBox[{"\[Pi]", "*", 
+                   RowBox[{"\[Theta]3", "/", "180"}]}], ",", "thicc", ",", 
+                  "dia", ",", "len"}], "]"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"drawLowerArms", "[", 
+                 RowBox[{
+                 "f", ",", "e", ",", "wb", ",", "wp", ",", "\[Mu]b", ",", 
+                  "\[Mu]p", ",", "dia", ",", "len", ",", 
+                  RowBox[{"{", 
+                   RowBox[{"x", ",", "y", ",", "z"}], "}"}], ",", 
+                  RowBox[{"\[Pi]", "*", 
+                   RowBox[{"\[Theta]1", "/", "180"}]}], ",", 
+                  RowBox[{"\[Pi]", "*", 
+                   RowBox[{"\[Theta]2", "/", "180"}]}], ",", 
+                  RowBox[{"\[Pi]", "*", 
+                   RowBox[{"\[Theta]3", "/", "180"}]}]}], "]"}]}], 
+               "\[IndentingNewLine]", "}"}], ",", 
+              RowBox[{"{", "\[IndentingNewLine]", "}"}]}], 
+             "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "}"}], 
+          ",", 
+          RowBox[{"Axes", "\[Rule]", "False"}], ",", " ", 
+          RowBox[{"SphericalRegion", "\[Rule]", "True"}], ",", " ", 
+          RowBox[{"Boxed", "\[Rule]", "True"}], ",", 
+          RowBox[{"ImageSize", "\[Rule]", "500"}], ",", 
+          RowBox[{"RotationAction", "\[Rule]", "\"\<Clip\>\""}]}], "]"}], ",",
+         "\[IndentingNewLine]", 
+        RowBox[{"PlotRange", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "1200"}], ",", "1200"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "1200"}], ",", "1200"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "1900"}], ",", "600"}], "}"}]}], "}"}]}]}], 
+       "]"}]}]}], "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
    RowBox[{"(*", " ", 
     RowBox[{"interface", ":", " ", 
      RowBox[{"buttons", " ", "and", " ", "sliders"}]}], " ", "*)"}], 
-   "\[IndentingNewLine]", 
-   "\"\<Solve the Delta Robot position using:\\n\\tFoward Kinematics: which \
-finds the x,y,z coordinates of the end effector using the servo \
-angles.\\n\\tInverse Kinematics: which finds the servo angles using the x,y,z \
-coordinates.\\nIf a position is unreachable in forward kinematics the end \
-effector will be drawn at the requested position but the arms will not be \
-drawn, if the position is unreachable in inverse kinematics the platform is \
-drawn at {0,0,0} and the arms are also omitted. This program allows for \
-exploration of configurations which a 'real' delta robot would not be able to \
-reach even if they are theoretically possible, this is due to the \
-interference of the base where an arm(s) must intersect with the base \
-platform. This program also allows for transitions between configurations \
-which may not be possible such as moving the end effector throught the \
-platform. This allows for better exploration of the singularities of the \
-robot design.\>\"", ",", "\[IndentingNewLine]", "Delimiter", ",", 
-   "\[IndentingNewLine]", "\"\<Foward kinematics:\>\"", ",", 
-   "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "Delimiter", ",", "\[IndentingNewLine]", 
+   "\"\<Foward kinematics:\>\"", ",", "\[IndentingNewLine]", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{"{", 
       RowBox[{
       "\[Theta]1s", ",", "0", ",", 
        "\"\<\!\(\*SubscriptBox[\(\[Theta]\), \(1\)]\)\>\""}], "}"}], ",", 
-     RowBox[{"-", "180"}], ",", "180", ",", "2", ",", 
+     RowBox[{"-", "80"}], ",", "100", ",", "2", ",", 
      RowBox[{"ImageSize", "\[Rule]", "Medium"}], ",", 
      RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}], ",", 
      RowBox[{"Enabled", "\[Rule]", 
@@ -169,7 +249,7 @@ robot design.\>\"", ",", "\[IndentingNewLine]", "Delimiter", ",",
       RowBox[{
       "\[Theta]2s", ",", "0", ",", 
        "\"\<\!\(\*SubscriptBox[\(\[Theta]\), \(2\)]\)\>\""}], "}"}], ",", 
-     RowBox[{"-", "180"}], ",", "180", ",", "2", ",", 
+     RowBox[{"-", "80"}], ",", "100", ",", "2", ",", 
      RowBox[{"ImageSize", "\[Rule]", "Medium"}], ",", 
      RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}], ",", 
      RowBox[{"Enabled", "\[Rule]", 
@@ -182,12 +262,30 @@ robot design.\>\"", ",", "\[IndentingNewLine]", "Delimiter", ",",
       RowBox[{
       "\[Theta]3s", ",", "0", ",", 
        "\"\<\!\(\*SubscriptBox[\(\[Theta]\), \(3\)]\)\>\""}], "}"}], ",", 
-     RowBox[{"-", "180"}], ",", "180", ",", "2", ",", 
+     RowBox[{"-", "80"}], ",", "100", ",", "2", ",", 
      RowBox[{"ImageSize", "\[Rule]", "Medium"}], ",", 
      RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}], ",", 
      RowBox[{"Enabled", "\[Rule]", 
       RowBox[{"(", 
        RowBox[{"IKin", "\[Equal]", "False"}], ")"}]}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Theta]1", ",", "0"}], "}"}], ",", 
+     RowBox[{"-", "180"}], ",", "180", ",", "2", ",", "None"}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Theta]2", ",", "0"}], "}"}], ",", 
+     RowBox[{"-", "180"}], ",", "180", ",", "2", ",", "None"}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Theta]3", ",", "0"}], "}"}], ",", 
+     RowBox[{"-", "180"}], ",", "180", ",", "2", ",", "None"}], "}"}], ",", 
    "\[IndentingNewLine]", "Delimiter", ",", "\[IndentingNewLine]", 
    "\"\<Inverse kinematics:\>\"", ",", "\[IndentingNewLine]", 
    RowBox[{"{", 
@@ -202,7 +300,7 @@ robot design.\>\"", ",", "\[IndentingNewLine]", "Delimiter", ",",
     RowBox[{
      RowBox[{"{", 
       RowBox[{"xs", ",", "0", ",", "\"\<x\>\""}], "}"}], ",", 
-     RowBox[{"-", "1500"}], ",", "1500", ",", "2", ",", 
+     RowBox[{"-", "1200"}], ",", "1200", ",", "1", ",", 
      RowBox[{"ImageSize", "\[Rule]", "Medium"}], ",", 
      RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}], ",", 
      RowBox[{"Enabled", "\[Rule]", 
@@ -213,7 +311,7 @@ robot design.\>\"", ",", "\[IndentingNewLine]", "Delimiter", ",",
     RowBox[{
      RowBox[{"{", 
       RowBox[{"ys", ",", "0", ",", "\"\<y\>\""}], "}"}], ",", 
-     RowBox[{"-", "1500"}], ",", "1500", ",", "2", ",", 
+     RowBox[{"-", "1200"}], ",", "1200", ",", "1", ",", 
      RowBox[{"ImageSize", "\[Rule]", "Medium"}], ",", 
      RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}], ",", 
      RowBox[{"Enabled", "\[Rule]", 
@@ -225,14 +323,36 @@ robot design.\>\"", ",", "\[IndentingNewLine]", "Delimiter", ",",
      RowBox[{"{", 
       RowBox[{"zs", ",", 
        RowBox[{"-", "1000"}], ",", "\"\<z\>\""}], "}"}], ",", 
-     RowBox[{"-", "1780"}], ",", "1780", ",", "2", ",", 
+     RowBox[{"-", "1800"}], ",", 
+     RowBox[{"-", "250"}], ",", "1", ",", 
      RowBox[{"ImageSize", "\[Rule]", "Medium"}], ",", 
      RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}], ",", 
      RowBox[{"Enabled", "\[Rule]", 
       RowBox[{"(", 
        RowBox[{"IKin", "\[Equal]", "True"}], ")"}]}]}], "}"}], ",", 
    "\[IndentingNewLine]", 
-   RowBox[{"ControlPlacement", "\[Rule]", "Left"}]}], "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0"}], "}"}], ",", 
+     RowBox[{"-", "1500"}], ",", "1500", ",", "1", ",", "None"}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"y", ",", "0"}], "}"}], ",", 
+     RowBox[{"-", "1500"}], ",", "1500", ",", "1", ",", "None"}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"z", ",", 
+       RowBox[{"-", "1000"}]}], "}"}], ",", 
+     RowBox[{"-", "1780"}], ",", "0", ",", "1", ",", "None"}], "}"}], ",", 
+   "\[IndentingNewLine]", "Delimiter", ",", "\[IndentingNewLine]", 
+   RowBox[{"ControlPlacement", "\[Rule]", "Right"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"SaveDefinitions", "\[Rule]", "True"}]}], "\[IndentingNewLine]", 
   "]"}]], "Input",
  CellChangeTimes->{{3.701987059312175*^9, 3.701987067234164*^9}, {
    3.701987225676515*^9, 3.701987358728153*^9}, {3.701987501188517*^9, 
@@ -259,69 +379,133 @@ robot design.\>\"", ",", "\[IndentingNewLine]", "Delimiter", ",",
    3.701993888386642*^9, 3.701993999552535*^9}, {3.7019940352722197`*^9, 
    3.701994038683468*^9}, {3.7019941092526693`*^9, 3.701994207369451*^9}, {
    3.701994794504562*^9, 3.701994799423038*^9}, {3.701995606217434*^9, 
-   3.701995606782955*^9}, {3.7019957223009977`*^9, 3.701995752314364*^9}}],
+   3.701995606782955*^9}, {3.7019957223009977`*^9, 3.701995752314364*^9}, 
+   3.702053768315998*^9, {3.702055347856209*^9, 3.702055386060767*^9}, {
+   3.7020554698517637`*^9, 3.702055480146056*^9}, {3.702055510305235*^9, 
+   3.70205558767945*^9}, {3.702055623992449*^9, 3.70205562456503*^9}, {
+   3.702055733762285*^9, 3.702055800715838*^9}, {3.70205587891873*^9, 
+   3.702055884646475*^9}, {3.702055997569166*^9, 3.7020560614318113`*^9}, {
+   3.702056125038121*^9, 3.702056187917252*^9}, {3.702056328439393*^9, 
+   3.702056330027598*^9}, {3.702057629252404*^9, 3.702057645358568*^9}, {
+   3.702078582920372*^9, 3.702078676044565*^9}, 3.7020788045241203`*^9, {
+   3.702078878090563*^9, 3.702078901817279*^9}, {3.702079046161352*^9, 
+   3.702079054960594*^9}, {3.702079163740487*^9, 3.702079168602653*^9}, {
+   3.702079223720615*^9, 3.70207923412899*^9}, {3.702079269164949*^9, 
+   3.702079371992584*^9}, {3.70207945890911*^9, 3.702079545549444*^9}, {
+   3.702079575590477*^9, 3.702079578798067*^9}, {3.702079617277853*^9, 
+   3.702079622131534*^9}, {3.702079761507598*^9, 3.702079768848818*^9}, {
+   3.7020798029926147`*^9, 3.702079817734703*^9}, {3.7020799037581244`*^9, 
+   3.702080029836845*^9}, {3.70208008878055*^9, 3.702080127969797*^9}, {
+   3.70208033315662*^9, 3.702080377882119*^9}, {3.702080451624967*^9, 
+   3.702080454221546*^9}, {3.70208121748693*^9, 3.702081224935004*^9}, {
+   3.702081324894106*^9, 3.7020813657979097`*^9}, {3.702081398466614*^9, 
+   3.7020814244742117`*^9}, {3.7020815068565207`*^9, 3.702081563862225*^9}, {
+   3.702081610045724*^9, 3.702081612637045*^9}, {3.702081744683387*^9, 
+   3.7020817939710817`*^9}, {3.702081916516161*^9, 3.7020819588999453`*^9}, 
+   3.7020820142690983`*^9, {3.702082190756216*^9, 3.702082249169939*^9}, {
+   3.702082643078021*^9, 3.702082669790099*^9}, {3.7020827026395683`*^9, 
+   3.7020827653489532`*^9}, {3.702082799675817*^9, 3.702082804834661*^9}, {
+   3.702083226227346*^9, 3.70208334909951*^9}, {3.70208341854319*^9, 
+   3.702083490916278*^9}, {3.702083574900589*^9, 3.702083583236656*^9}, {
+   3.702083688446232*^9, 3.7020836921091833`*^9}, {3.702083760015698*^9, 
+   3.702083770460752*^9}, {3.7020839264779043`*^9, 3.702083926770637*^9}, {
+   3.702084169461088*^9, 3.7020841803083963`*^9}, {3.7020842134923887`*^9, 
+   3.702084220042781*^9}, {3.7021444761948338`*^9, 3.702144619049038*^9}, {
+   3.70214468941026*^9, 3.702144689720997*^9}, {3.702144755242893*^9, 
+   3.702144789936212*^9}, {3.702144885116729*^9, 3.702144914577992*^9}, {
+   3.7021449791156397`*^9, 3.702144987394483*^9}, {3.702145083413301*^9, 
+   3.702145089854047*^9}, {3.702145179303072*^9, 3.7021451899887114`*^9}, {
+   3.702145231718431*^9, 3.7021452593799257`*^9}, {3.702145306937728*^9, 
+   3.702145312801015*^9}, {3.70214543226658*^9, 3.7021454759852962`*^9}, {
+   3.7022201168291407`*^9, 3.702220170154619*^9}, {3.7022203127515087`*^9, 
+   3.702220361662252*^9}, {3.70222041471821*^9, 3.7022204410770063`*^9}, {
+   3.702220532083212*^9, 3.702220538073881*^9}, {3.702221101876333*^9, 
+   3.702221103638435*^9}, {3.702221443919446*^9, 3.7022214832954903`*^9}, {
+   3.702221591185977*^9, 3.7022215946164227`*^9}, {3.702221795114881*^9, 
+   3.7022217965357647`*^9}, {3.7022219766582613`*^9, 3.70222197902853*^9}, {
+   3.702222014213397*^9, 3.702222098149579*^9}, {3.702222139724465*^9, 
+   3.70222214360422*^9}, {3.702223965321602*^9, 3.70222396684649*^9}, {
+   3.702224101247903*^9, 3.702224105546158*^9}, {3.702224155200062*^9, 
+   3.7022241635827417`*^9}, {3.702224202753718*^9, 3.702224211564581*^9}, {
+   3.7022242793342953`*^9, 3.702224295612705*^9}, {3.702224361476708*^9, 
+   3.702224369276801*^9}, {3.702224495559669*^9, 3.7022245064165792`*^9}, {
+   3.702224552864443*^9, 3.70222462103087*^9}, {3.702224679645702*^9, 
+   3.702224717583221*^9}, {3.702224779055643*^9, 3.70222477993612*^9}, {
+   3.702224813815027*^9, 3.7022248744674053`*^9}, {3.702224921452235*^9, 
+   3.7022249273493433`*^9}, {3.7022249669560013`*^9, 3.702224967290227*^9}, {
+   3.70222509083384*^9, 3.702225095165472*^9}, {3.702225522517048*^9, 
+   3.702225593306575*^9}, {3.702225680867075*^9, 3.702225684456972*^9}, {
+   3.70222587220387*^9, 3.7022259375571527`*^9}, {3.702225970269135*^9, 
+   3.702225973900947*^9}, {3.702226030985526*^9, 3.702226031989259*^9}, {
+   3.702226109870742*^9, 3.7022261103692503`*^9}, {3.702226143581204*^9, 
+   3.702226220386548*^9}, {3.702226285945615*^9, 3.702226290592925*^9}, {
+   3.702226323160674*^9, 3.702226324655583*^9}, {3.702226429360847*^9, 
+   3.702226449863728*^9}}],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`IKin$$ = True, $CellContext`xs$$ = 
-    438, $CellContext`ys$$ = -810, $CellContext`zs$$ = -1000, $CellContext`\
-\[Theta]1s$$ = 0, $CellContext`\[Theta]2s$$ = 0, $CellContext`\[Theta]3s$$ = 
-    0, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+   DynamicModuleBox[{$CellContext`IKin$$ = 
+    True, $CellContext`x$$ = -93, $CellContext`xs$$ = -93, $CellContext`y$$ = 
+    628, $CellContext`ys$$ = 
+    628, $CellContext`z$$ = -1518, $CellContext`zs$$ = -1518, $CellContext`\
+\[Theta]1$$ = 93.12797315920889, $CellContext`\[Theta]1s$$ = 
+    93.12797315920889, $CellContext`\[Theta]2$$ = 
+    57.1273455019068, $CellContext`\[Theta]2s$$ = 
+    57.1273455019068, $CellContext`\[Theta]3$$ = 
+    46.901983823598414`, $CellContext`\[Theta]3s$$ = 46.901983823598414`, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
     Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
     1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
-      Hold[
-      "Solve the Delta Robot position using:\n\tFoward Kinematics: which \
-finds the x,y,z coordinates of the end effector using the servo angles.\n\t\
-Inverse Kinematics: which finds the servo angles using the x,y,z coordinates.\
-\nIf a position is unreachable in forward kinematics the end effector will be \
-drawn at the requested position but the arms will not be drawn, if the \
-position is unreachable in inverse kinematics the platform is drawn at \
-{0,0,0} and the arms are also omitted. This program allows for exploration of \
-configurations which a 'real' delta robot would not be able to reach even if \
-they are theoretically possible, this is due to the interference of the base \
-where an arm(s) must intersect with the base platform. This program also \
-allows for transitions between configurations which may not be possible such \
-as moving the end effector throught the platform. This allows for better \
-exploration of the singularities of the robot design."], 
-      Manipulate`Dump`ThisIsNotAControl}, {
       Hold["Foward kinematics:"], Manipulate`Dump`ThisIsNotAControl}, {{
        Hold[$CellContext`\[Theta]1s$$], 0, 
-       "\!\(\*SubscriptBox[\(\[Theta]\), \(1\)]\)"}, -180, 180, 2}, {{
+       "\!\(\*SubscriptBox[\(\[Theta]\), \(1\)]\)"}, -80, 100, 2}, {{
        Hold[$CellContext`\[Theta]2s$$], 0, 
-       "\!\(\*SubscriptBox[\(\[Theta]\), \(2\)]\)"}, -180, 180, 2}, {{
+       "\!\(\*SubscriptBox[\(\[Theta]\), \(2\)]\)"}, -80, 100, 2}, {{
        Hold[$CellContext`\[Theta]3s$$], 0, 
-       "\!\(\*SubscriptBox[\(\[Theta]\), \(3\)]\)"}, -180, 180, 2}, {
+       "\!\(\*SubscriptBox[\(\[Theta]\), \(3\)]\)"}, -80, 100, 2}, {{
+       Hold[$CellContext`\[Theta]1$$], 0}, -180, 180, 2}, {{
+       Hold[$CellContext`\[Theta]2$$], 0}, -180, 180, 2}, {{
+       Hold[$CellContext`\[Theta]3$$], 0}, -180, 180, 2}, {
       Hold["Inverse kinematics:"], Manipulate`Dump`ThisIsNotAControl}, {{
        Hold[$CellContext`IKin$$], True, "set inverse kinematics"}, {
       True, False}}, {{
-       Hold[$CellContext`xs$$], 0, "x"}, -1500, 1500, 2}, {{
-       Hold[$CellContext`ys$$], 0, "y"}, -1500, 1500, 2}, {{
-       Hold[$CellContext`zs$$], -1000, "z"}, -1780, 1780, 2}}, 
-    Typeset`size$$ = {576., {286., 290.}}, Typeset`update$$ = 0, 
-    Typeset`initDone$$, Typeset`skipInitDone$$ = 
-    True, $CellContext`\[Theta]1s$137367$$ = 
-    0, $CellContext`\[Theta]2s$137368$$ = 
-    0, $CellContext`\[Theta]3s$137369$$ = 0, $CellContext`IKin$137370$$ = 
-    False, $CellContext`xs$137371$$ = 0, $CellContext`ys$137372$$ = 
-    0, $CellContext`zs$137373$$ = 0}, 
+       Hold[$CellContext`xs$$], 0, "x"}, -1200, 1200, 1}, {{
+       Hold[$CellContext`ys$$], 0, "y"}, -1200, 1200, 1}, {{
+       Hold[$CellContext`zs$$], -1000, "z"}, -1800, -250, 1}, {{
+       Hold[$CellContext`x$$], 0}, -1500, 1500, 1}, {{
+       Hold[$CellContext`y$$], 0}, -1500, 1500, 1}, {{
+       Hold[$CellContext`z$$], -1000}, -1780, 0, 1}}, Typeset`size$$ = {
+    500., {248., 252.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = False, $CellContext`\[Theta]1s$114919$$ = 
+    0, $CellContext`\[Theta]2s$114920$$ = 
+    0, $CellContext`\[Theta]3s$114921$$ = 0, $CellContext`\[Theta]1$114922$$ =
+     0, $CellContext`\[Theta]2$114923$$ = 0, $CellContext`\[Theta]3$114924$$ =
+     0, $CellContext`IKin$114925$$ = False, $CellContext`xs$114926$$ = 
+    0, $CellContext`ys$114927$$ = 0, $CellContext`zs$114928$$ = 
+    0, $CellContext`x$114929$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, 
-      "Variables" :> {$CellContext`IKin$$ = True, $CellContext`xs$$ = 
-        0, $CellContext`ys$$ = 
-        0, $CellContext`zs$$ = -1000, $CellContext`\[Theta]1s$$ = 
-        0, $CellContext`\[Theta]2s$$ = 0, $CellContext`\[Theta]3s$$ = 0}, 
-      "ControllerVariables" :> {
-        Hold[$CellContext`\[Theta]1s$$, $CellContext`\[Theta]1s$137367$$, 0], 
+      "Variables" :> {$CellContext`IKin$$ = True, $CellContext`x$$ = 
+        0, $CellContext`xs$$ = 0, $CellContext`y$$ = 0, $CellContext`ys$$ = 
+        0, $CellContext`z$$ = -1000, $CellContext`zs$$ = -1000, $CellContext`\
+\[Theta]1$$ = 0, $CellContext`\[Theta]1s$$ = 0, $CellContext`\[Theta]2$$ = 
+        0, $CellContext`\[Theta]2s$$ = 0, $CellContext`\[Theta]3$$ = 
+        0, $CellContext`\[Theta]3s$$ = 0}, "ControllerVariables" :> {
+        Hold[$CellContext`\[Theta]1s$$, $CellContext`\[Theta]1s$114919$$, 0], 
         
-        Hold[$CellContext`\[Theta]2s$$, $CellContext`\[Theta]2s$137368$$, 0], 
+        Hold[$CellContext`\[Theta]2s$$, $CellContext`\[Theta]2s$114920$$, 0], 
         
-        Hold[$CellContext`\[Theta]3s$$, $CellContext`\[Theta]3s$137369$$, 0], 
+        Hold[$CellContext`\[Theta]3s$$, $CellContext`\[Theta]3s$114921$$, 0], 
         
-        Hold[$CellContext`IKin$$, $CellContext`IKin$137370$$, False], 
-        Hold[$CellContext`xs$$, $CellContext`xs$137371$$, 0], 
-        Hold[$CellContext`ys$$, $CellContext`ys$137372$$, 0], 
-        Hold[$CellContext`zs$$, $CellContext`zs$137373$$, 0]}, 
+        Hold[$CellContext`\[Theta]1$$, $CellContext`\[Theta]1$114922$$, 0], 
+        Hold[$CellContext`\[Theta]2$$, $CellContext`\[Theta]2$114923$$, 0], 
+        Hold[$CellContext`\[Theta]3$$, $CellContext`\[Theta]3$114924$$, 0], 
+        Hold[$CellContext`IKin$$, $CellContext`IKin$114925$$, False], 
+        Hold[$CellContext`xs$$, $CellContext`xs$114926$$, 0], 
+        Hold[$CellContext`ys$$, $CellContext`ys$114927$$, 0], 
+        Hold[$CellContext`zs$$, $CellContext`zs$114928$$, 0], 
+        Hold[$CellContext`x$$, $CellContext`x$114929$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -332,82 +516,581 @@ exploration of the singularities of the robot design."],
          164, $CellContext`wp$ = 22, $CellContext`\[Mu]b$ = 
          327, $CellContext`\[Mu]p$ = 44, $CellContext`thicc$ = 
          15, $CellContext`dia$ = 10, $CellContext`len$ = 
-         75, $CellContext`status$, $CellContext`x$, $CellContext`y$, \
-$CellContext`z$, $CellContext`\[Theta]1$, $CellContext`\[Theta]2$, \
-$CellContext`\[Theta]3$}, 
+         75, $CellContext`status$}, 
         If[$CellContext`IKin$$ == 
-          True, {$CellContext`x$ = $CellContext`xs$$; $CellContext`y$ = \
-$CellContext`ys$$; $CellContext`z$ = $CellContext`zs$$; \
-{$CellContext`status$, $CellContext`\[Theta]1$, $CellContext`\[Theta]2$, \
-$CellContext`\[Theta]3$} = $CellContext`calcInverse[$CellContext`x$, \
-$CellContext`y$, $CellContext`z$, $CellContext`f$, $CellContext`e$, \
-$CellContext`rf$, $CellContext`re$]; 
-           Null}, {$CellContext`\[Theta]1$ = $CellContext`\[Theta]1s$$; \
-$CellContext`\[Theta]2$ = $CellContext`\[Theta]2s$$; $CellContext`\[Theta]3$ = \
-$CellContext`\[Theta]3s$$; {$CellContext`status$, $CellContext`x$, \
-$CellContext`y$, $CellContext`z$} = $CellContext`calcForward[$CellContext`\
-\[Theta]1$, $CellContext`\[Theta]2$, $CellContext`\[Theta]3$, \
-$CellContext`f$, $CellContext`e$, $CellContext`rf$, $CellContext`re$]; Null}]; 
-        Graphics3D[{
-           $CellContext`drawBase[$CellContext`f$, $CellContext`wb$, \
-$CellContext`\[Mu]b$, $CellContext`thicc$], 
-           $CellContext`drawEndEffector[$CellContext`e$, $CellContext`wp$, \
+          True, {{$CellContext`status$, $CellContext`\[Theta]1$$, \
+$CellContext`\[Theta]2$$, $CellContext`\[Theta]3$$} = \
+$CellContext`calcInverse[$CellContext`xs$$, $CellContext`ys$$, \
+$CellContext`zs$$, $CellContext`f$, $CellContext`e$, $CellContext`rf$, \
+$CellContext`re$]; If[
+             
+             And[$CellContext`status$ != -1, $CellContext`\[Theta]1$$ < 
+              100, $CellContext`\[Theta]2$$ < 100, $CellContext`\[Theta]3$$ < 
+              100, $CellContext`\[Theta]1$$ > -80, $CellContext`\[Theta]2$$ > \
+-80, $CellContext`\[Theta]3$$ > -80, $CellContext`zs$$ != 
+              0], {$CellContext`\[Theta]1s$$ = $CellContext`\[Theta]1$$; \
+$CellContext`\[Theta]2s$$ = $CellContext`\[Theta]2$$; \
+$CellContext`\[Theta]3s$$ = $CellContext`\[Theta]3$$; $CellContext`x$$ = \
+$CellContext`xs$$; $CellContext`y$$ = $CellContext`ys$$; $CellContext`z$$ = \
+$CellContext`zs$$; 
+              Null}, {$CellContext`xs$$ = $CellContext`x$$; $CellContext`ys$$ = \
+$CellContext`y$$; $CellContext`zs$$ = $CellContext`z$$; Null}]; 
+           Null}, {{$CellContext`status$, $CellContext`x$$, $CellContext`y$$, \
+$CellContext`z$$} = $CellContext`calcForward[$CellContext`\[Theta]1s$$, \
+$CellContext`\[Theta]2s$$, $CellContext`\[Theta]3s$$, $CellContext`f$, \
+$CellContext`e$, $CellContext`rf$, $CellContext`re$]; If[
+             
+             And[$CellContext`status$ != -1, $CellContext`z$$ <= 
+              0, $CellContext`\[Theta]1s$$ < 100, $CellContext`\[Theta]2s$$ < 
+              100, $CellContext`\[Theta]3s$$ < 
+              100, $CellContext`\[Theta]1s$$ > -80, $CellContext`\[Theta]2s$$ > \
+-80, $CellContext`\[Theta]3s$$ > -80, $CellContext`x$$ < 
+              1200, $CellContext`y$$ < 
+              
+              1200, $CellContext`z$$ < -250, $CellContext`x$$ > -1200, \
+$CellContext`y$$ > -1200, $CellContext`z$$ > -1800], \
+{$CellContext`\[Theta]1$$ = $CellContext`\[Theta]1s$$; \
+$CellContext`\[Theta]2$$ = $CellContext`\[Theta]2s$$; \
+$CellContext`\[Theta]3$$ = $CellContext`\[Theta]3s$$; $CellContext`xs$$ = \
+$CellContext`x$$; $CellContext`ys$$ = $CellContext`y$$; $CellContext`zs$$ = \
+$CellContext`z$$; 
+              Null}, {$CellContext`\[Theta]1s$$ = $CellContext`\[Theta]1$$; \
+$CellContext`\[Theta]2s$$ = $CellContext`\[Theta]2$$; \
+$CellContext`\[Theta]3s$$ = $CellContext`\[Theta]3$$; Null}]; Null}]; Show[
+          Graphics3D[{
+            $CellContext`drawBase[$CellContext`f$, $CellContext`wb$, \
+$CellContext`\[Mu]b$, $CellContext`thicc$, {0, 0, 0}], 
+            ViewCenter -> {250, 250}, 
+            $CellContext`drawBase[$CellContext`f$ 3, $CellContext`wb$ 
+             3, $CellContext`\[Mu]b$ 3, $CellContext`thicc$, {0, 0, -1800}], 
+            If[
+             
+             And[$CellContext`status$ == 0, $CellContext`zs$$ != 
+              0, $CellContext`z$$ != 0], {
+              $CellContext`drawEndEffector[$CellContext`e$, $CellContext`wp$, \
 $CellContext`\[Mu]p$, $CellContext`thicc$, $CellContext`dia$, \
-$CellContext`len$, {$CellContext`x$, $CellContext`y$, $CellContext`z$}], 
-           If[
-            And[$CellContext`status$ == 0, $CellContext`z$ != 0], {
-             $CellContext`drawUpperArms[$CellContext`f$, $CellContext`wb$, \
-$CellContext`rf$, Pi ($CellContext`\[Theta]1$/180), 
-              Pi ($CellContext`\[Theta]2$/180), 
-              Pi ($CellContext`\[Theta]3$/
-               180), $CellContext`thicc$, $CellContext`dia$, \
+$CellContext`len$, {$CellContext`x$$, $CellContext`y$$, $CellContext`z$$}], 
+              $CellContext`drawUpperArms[$CellContext`f$, $CellContext`wb$, \
+$CellContext`rf$, Pi ($CellContext`\[Theta]1$$/180), 
+               Pi ($CellContext`\[Theta]2$$/180), 
+               Pi ($CellContext`\[Theta]3$$/
+                180), $CellContext`thicc$, $CellContext`dia$, \
 $CellContext`len$], 
-             $CellContext`drawLowerArms[$CellContext`f$, $CellContext`e$, \
+              $CellContext`drawLowerArms[$CellContext`f$, $CellContext`e$, \
 $CellContext`wb$, $CellContext`wp$, $CellContext`\[Mu]b$, \
-$CellContext`\[Mu]p$, $CellContext`dia$, $CellContext`len$, {$CellContext`x$, \
-$CellContext`y$, $CellContext`z$}, Pi ($CellContext`\[Theta]1$/180), 
-              Pi ($CellContext`\[Theta]2$/180), 
-              Pi ($CellContext`\[Theta]3$/180)]}, {}]}, Axes -> False, 
-          SphericalRegion -> True, Boxed -> False, ImageSize -> Large]], 
+$CellContext`\[Mu]p$, $CellContext`dia$, $CellContext`len$, \
+{$CellContext`x$$, $CellContext`y$$, $CellContext`z$$}, 
+               Pi ($CellContext`\[Theta]1$$/180), 
+               Pi ($CellContext`\[Theta]2$$/180), 
+               Pi ($CellContext`\[Theta]3$$/180)]}, {}]}, Axes -> False, 
+           SphericalRegion -> True, Boxed -> True, ImageSize -> 500, 
+           RotationAction -> "Clip", ViewAngle -> 35 Degree], 
+          PlotRange -> {{-1200, 1200}, {-1200, 1200}, {-1900, 600}}]], 
       "Specifications" :> {
-       "Solve the Delta Robot position using:\n\tFoward Kinematics: which \
-finds the x,y,z coordinates of the end effector using the servo angles.\n\t\
-Inverse Kinematics: which finds the servo angles using the x,y,z coordinates.\
-\nIf a position is unreachable in forward kinematics the end effector will be \
-drawn at the requested position but the arms will not be drawn, if the \
-position is unreachable in inverse kinematics the platform is drawn at \
-{0,0,0} and the arms are also omitted. This program allows for exploration of \
-configurations which a 'real' delta robot would not be able to reach even if \
-they are theoretically possible, this is due to the interference of the base \
-where an arm(s) must intersect with the base platform. This program also \
-allows for transitions between configurations which may not be possible such \
-as moving the end effector throught the platform. This allows for better \
-exploration of the singularities of the robot design.", Delimiter, 
+       Delimiter, 
         "Foward kinematics:", {{$CellContext`\[Theta]1s$$, 0, 
-          "\!\(\*SubscriptBox[\(\[Theta]\), \(1\)]\)"}, -180, 180, 2, 
+          "\!\(\*SubscriptBox[\(\[Theta]\), \(1\)]\)"}, -80, 100, 2, 
          ImageSize -> Medium, Appearance -> "Labeled", Enabled -> 
          Dynamic[$CellContext`IKin$$ == False]}, {{$CellContext`\[Theta]2s$$, 
-          0, "\!\(\*SubscriptBox[\(\[Theta]\), \(2\)]\)"}, -180, 180, 2, 
+          0, "\!\(\*SubscriptBox[\(\[Theta]\), \(2\)]\)"}, -80, 100, 2, 
          ImageSize -> Medium, Appearance -> "Labeled", Enabled -> 
          Dynamic[$CellContext`IKin$$ == False]}, {{$CellContext`\[Theta]3s$$, 
-          0, "\!\(\*SubscriptBox[\(\[Theta]\), \(3\)]\)"}, -180, 180, 2, 
+          0, "\!\(\*SubscriptBox[\(\[Theta]\), \(3\)]\)"}, -80, 100, 2, 
          ImageSize -> Medium, Appearance -> "Labeled", Enabled -> 
-         Dynamic[$CellContext`IKin$$ == False]}, Delimiter, 
+         Dynamic[$CellContext`IKin$$ == False]}, {{$CellContext`\[Theta]1$$, 
+          0}, -180, 180, 2, ControlType -> 
+         None}, {{$CellContext`\[Theta]2$$, 0}, -180, 180, 2, ControlType -> 
+         None}, {{$CellContext`\[Theta]3$$, 0}, -180, 180, 2, ControlType -> 
+         None}, Delimiter, 
         "Inverse kinematics:", {{$CellContext`IKin$$, True, 
           "set inverse kinematics"}, {
-         True, False}}, {{$CellContext`xs$$, 0, "x"}, -1500, 1500, 2, 
+         True, False}}, {{$CellContext`xs$$, 0, "x"}, -1200, 1200, 1, 
          ImageSize -> Medium, Appearance -> "Labeled", Enabled -> 
          Dynamic[$CellContext`IKin$$ == True]}, {{$CellContext`ys$$, 0, 
-          "y"}, -1500, 1500, 2, ImageSize -> Medium, Appearance -> "Labeled", 
+          "y"}, -1200, 1200, 1, ImageSize -> Medium, Appearance -> "Labeled", 
          Enabled -> Dynamic[$CellContext`IKin$$ == 
-           True]}, {{$CellContext`zs$$, -1000, "z"}, -1780, 1780, 2, 
+           True]}, {{$CellContext`zs$$, -1000, "z"}, -1800, -250, 1, 
          ImageSize -> Medium, Appearance -> "Labeled", Enabled -> 
-         Dynamic[$CellContext`IKin$$ == True]}}, 
-      "Options" :> {ControlPlacement -> Left}, "DefaultOptions" :> {}],
-     ImageSizeCache->{1175., {315., 321.}},
+         Dynamic[$CellContext`IKin$$ == True]}, {{$CellContext`x$$, 0}, -1500,
+          1500, 1, ControlType -> None}, {{$CellContext`y$$, 0}, -1500, 1500, 
+         1, ControlType -> None}, {{$CellContext`z$$, -1000}, -1780, 0, 1, 
+         ControlType -> None}, Delimiter}, 
+      "Options" :> {ControlPlacement -> Right}, "DefaultOptions" :> {}],
+     ImageSizeCache->{900., {277., 283.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
+    Initialization:>({$CellContext`calcInverse[
+         Pattern[$CellContext`x0$, 
+          Blank[]], 
+         Pattern[$CellContext`y0$, 
+          Blank[]], 
+         Pattern[$CellContext`z0$, 
+          Blank[]], 
+         Pattern[$CellContext`f$, 
+          Blank[]], 
+         Pattern[$CellContext`e$, 
+          Blank[]], 
+         Pattern[$CellContext`rf$, 
+          Blank[]], 
+         Pattern[$CellContext`re$, 
+          Blank[]]] := 
+       Module[{$CellContext`\[Theta]1$, $CellContext`\[Theta]2$, \
+$CellContext`\[Theta]3$, $CellContext`status$}, If[FE`z$$8 == 0, 
+           
+           Return[{-1, 0, 0, 0}, 
+            Module]]; $CellContext`\[Theta]1$ = ($CellContext`\[Theta]2$ = \
+($CellContext`\[Theta]3$ = 
+            0)); {$CellContext`status$, $CellContext`\[Theta]1$} = \
+$CellContext`calcAngle[$CellContext`x0$, $CellContext`y0$, $CellContext`z0$, \
+$CellContext`f$, $CellContext`e$, $CellContext`rf$, $CellContext`re$]; 
+         If[$CellContext`status$ == 
+           0, {{$CellContext`status$, $CellContext`\[Theta]2$} = \
+$CellContext`calcAngle[$CellContext`x0$ Cos[120 Degree] + $CellContext`y0$ 
+               Sin[120 Degree], $CellContext`y0$ 
+               Cos[120 Degree] - $CellContext`x0$ 
+              Sin[120 Degree], $CellContext`z0$, $CellContext`f$, \
+$CellContext`e$, $CellContext`rf$, $CellContext`re$]}, {
+            
+            Return[{-1, $CellContext`\[Theta]1$, $CellContext`\[Theta]2$, \
+$CellContext`\[Theta]3$}]}, Module]; 
+         If[$CellContext`status$ == 
+           0, {{$CellContext`status$, $CellContext`\[Theta]3$} = \
+$CellContext`calcAngle[$CellContext`x0$ Cos[120 Degree] - $CellContext`y0$ 
+              Sin[120 Degree], $CellContext`y0$ 
+               Cos[120 Degree] + $CellContext`x0$ 
+               Sin[120 
+                 Degree], $CellContext`z0$, $CellContext`f$, $CellContext`e$, \
+$CellContext`rf$, $CellContext`re$]}, {
+            
+            Return[{-1, $CellContext`\[Theta]1$, $CellContext`\[Theta]2$, \
+$CellContext`\[Theta]3$}]}, Module]; 
+         Return[{$CellContext`status$, $CellContext`\[Theta]1$, $CellContext`\
+\[Theta]2$, $CellContext`\[Theta]3$}]], 
+       Attributes[$CellContext`x0$] = {Temporary}, 
+       Attributes[$CellContext`y0$] = {Temporary}, 
+       Attributes[$CellContext`z0$] = {Temporary}, 
+       FE`z$$8 = -554.8513373601307, $CellContext`calcAngle[
+         Pattern[$CellContext`x0, 
+          Blank[]], 
+         Pattern[$CellContext`y0, 
+          Blank[]], 
+         Pattern[$CellContext`z0, 
+          Blank[]], 
+         Pattern[$CellContext`f, 
+          Blank[]], 
+         Pattern[$CellContext`e, 
+          Blank[]], 
+         Pattern[$CellContext`rf, 
+          Blank[]], 
+         Pattern[$CellContext`re, 
+          Blank[]]] := 
+       Module[{$CellContext`y1, $CellContext`y0s, $CellContext`a, \
+$CellContext`b, $CellContext`d, $CellContext`yj, $CellContext`zj, \
+$CellContext`\[Theta]}, $CellContext`y1 = ((-0.5) 
+            0.57735) $CellContext`f; $CellContext`y0s = $CellContext`y0 - (
+            0.5 0.57735) $CellContext`e; $CellContext`a = ($CellContext`x0^2 + \
+$CellContext`y0s^2 + $CellContext`z0^2 + $CellContext`rf^2 - \
+$CellContext`re^2 - $CellContext`y1^2)/(
+           2 $CellContext`z0); $CellContext`b = ($CellContext`y1 - \
+$CellContext`y0s)/$CellContext`z0; $CellContext`d = -($CellContext`a + \
+$CellContext`b $CellContext`y1)^2 + $CellContext`rf ($CellContext`b^2 \
+$CellContext`rf + $CellContext`rf); If[$CellContext`d < 0, {
+            
+            Return[{-1, 0}, 
+             Module]}, {}]; $CellContext`yj = ($CellContext`y1 - \
+$CellContext`a $CellContext`b - Sqrt[$CellContext`d])/($CellContext`b^2 + 
+           1); $CellContext`zj = $CellContext`a + $CellContext`b \
+$CellContext`yj; $CellContext`\[Theta] = 
+          180 (ArcTan[-($CellContext`zj/($CellContext`y1 - $CellContext`yj))]/
+            Pi); If[$CellContext`yj > $CellContext`y1, {$CellContext`\[Theta] = \
+$CellContext`\[Theta] + 180}, {}]; 
+         Return[{0, $CellContext`\[Theta]}]], $CellContext`calcForward[
+         Pattern[$CellContext`\[Theta]1$, 
+          Blank[]], 
+         Pattern[$CellContext`\[Theta]2$, 
+          Blank[]], 
+         Pattern[$CellContext`\[Theta]3$, 
+          Blank[]], 
+         Pattern[$CellContext`f$, 
+          Blank[]], 
+         Pattern[$CellContext`e$, 
+          Blank[]], 
+         Pattern[$CellContext`rf$, 
+          Blank[]], 
+         Pattern[$CellContext`re$, 
+          Blank[]]] := 
+       Module[{$CellContext`t$, $CellContext`x1$ = 
+          0, $CellContext`x2$, $CellContext`x3$, $CellContext`y1$, \
+$CellContext`y2$, $CellContext`y3$, $CellContext`z1$, $CellContext`z2$, \
+$CellContext`z3$, $CellContext`w1$, $CellContext`w2$, $CellContext`w3$, \
+$CellContext`a1$, $CellContext`a2$, $CellContext`b1$, $CellContext`b2$, \
+$CellContext`a$, $CellContext`b$, $CellContext`c$, $CellContext`d$, \
+$CellContext`dnm$}, $CellContext`t$ = ($CellContext`f$ - $CellContext`e$) (
+            Tan[Pi/6]/
+            2); $CellContext`y1$ = -($CellContext`t$ + $CellContext`rf$ 
+             Cos[$CellContext`\[Theta]1$ 
+               Degree]); $CellContext`z1$ = (-$CellContext`rf$) 
+           Sin[$CellContext`\[Theta]1$ 
+             Degree]; $CellContext`y2$ = ($CellContext`t$ + $CellContext`rf$ 
+             Cos[$CellContext`\[Theta]2$ Degree]) 
+           0.5; $CellContext`x2$ = $CellContext`y2$ 
+           Tan[Pi/3]; $CellContext`z2$ = (-$CellContext`rf$) 
+           Sin[$CellContext`\[Theta]2$ 
+             Degree]; $CellContext`y3$ = ($CellContext`t$ + $CellContext`rf$ 
+             Cos[$CellContext`\[Theta]3$ Degree]) 
+           0.5; $CellContext`x3$ = (-$CellContext`y3$) 
+           Tan[Pi/3]; $CellContext`z3$ = (-$CellContext`rf$) 
+           Sin[$CellContext`\[Theta]3$ 
+             Degree]; $CellContext`dnm$ = ($CellContext`y2$ - \
+$CellContext`y1$) $CellContext`x3$ - ($CellContext`y3$ - $CellContext`y1$) \
+$CellContext`x2$; $CellContext`w1$ = $CellContext`y1$^2 + $CellContext`z1$^2; \
+$CellContext`w2$ = $CellContext`x2$^2 + $CellContext`y2$^2 + \
+$CellContext`z2$^2; $CellContext`w3$ = $CellContext`x3$^2 + \
+$CellContext`y3$^2 + $CellContext`z3$^2; $CellContext`a1$ = ($CellContext`z2$ - \
+$CellContext`z1$) ($CellContext`y3$ - $CellContext`y1$) - ($CellContext`z3$ - \
+$CellContext`z1$) ($CellContext`y2$ - $CellContext`y1$); $CellContext`a2$ = \
+(-($CellContext`z2$ - $CellContext`z1$)) $CellContext`x3$ + ($CellContext`z3$ - \
+$CellContext`z1$) $CellContext`x2$; $CellContext`b1$ = -((($CellContext`w2$ - \
+$CellContext`w1$) ($CellContext`y3$ - $CellContext`y1$) - ($CellContext`w3$ - \
+$CellContext`w1$) ($CellContext`y2$ - $CellContext`y1$))/
+            2); $CellContext`b2$ = (($CellContext`w2$ - $CellContext`w1$) \
+$CellContext`x3$ - ($CellContext`w3$ - $CellContext`w1$) $CellContext`x2$)/
+           2; $CellContext`a$ = $CellContext`a1$^2 + $CellContext`a2$^2 + \
+$CellContext`dnm$^2; $CellContext`b$ = 
+          2 ($CellContext`a1$ $CellContext`b1$ + $CellContext`a2$ \
+($CellContext`b2$ - $CellContext`y1$ $CellContext`dnm$) - $CellContext`z1$ \
+$CellContext`dnm$^2); $CellContext`c$ = ($CellContext`b2$ - $CellContext`y1$ \
+$CellContext`dnm$) ($CellContext`b2$ - $CellContext`y1$ $CellContext`dnm$) + \
+$CellContext`b1$^2 + $CellContext`dnm$^2 ($CellContext`z1$^2 - \
+$CellContext`re$^2); $CellContext`d$ = $CellContext`b$^2 - (
+            4. $CellContext`a$) $CellContext`c$; If[$CellContext`d$ < 0, {
+            Return[{-1, 0, 0, 0}, Module]}, {
+            FE`z$$8 = -(($CellContext`b$ + Sqrt[$CellContext`d$])/(
+                2. $CellContext`a$)); 
+             FE`y$$8 = ($CellContext`a2$ 
+                 FE`z$$8 + $CellContext`b2$)/$CellContext`dnm$; 
+             FE`x$$8 = ($CellContext`a1$ 
+                 FE`z$$8 + $CellContext`b1$)/$CellContext`dnm$; Null}; 
+           Return[{0, FE`x$$8, FE`y$$8, FE`z$$8}]; Null]], 
+       Attributes[$CellContext`t$] = {Temporary}, 
+       Attributes[$CellContext`x1$] = {Temporary}, 
+       Attributes[$CellContext`x2$] = {Temporary}, 
+       Attributes[$CellContext`x3$] = {Temporary}, 
+       Attributes[$CellContext`y1$] = {Temporary}, 
+       Attributes[$CellContext`y2$] = {Temporary}, 
+       Attributes[$CellContext`y3$] = {Temporary}, 
+       Attributes[$CellContext`z1$] = {Temporary}, 
+       Attributes[$CellContext`z2$] = {Temporary}, 
+       Attributes[$CellContext`z3$] = {Temporary}, 
+       Attributes[$CellContext`w1$] = {Temporary}, 
+       Attributes[$CellContext`w2$] = {Temporary}, 
+       Attributes[$CellContext`w3$] = {Temporary}, 
+       Attributes[$CellContext`a1$] = {Temporary}, 
+       Attributes[$CellContext`a2$] = {Temporary}, 
+       Attributes[$CellContext`b1$] = {Temporary}, 
+       Attributes[$CellContext`b2$] = {Temporary}, 
+       Attributes[$CellContext`a$] = {Temporary}, 
+       Attributes[$CellContext`b$] = {Temporary}, 
+       Attributes[$CellContext`c$] = {Temporary}, 
+       Attributes[$CellContext`d$] = {Temporary}, 
+       Attributes[$CellContext`dnm$] = {Temporary}, 
+       FE`y$$8 = -847.4388284541251, FE`x$$8 = 
+       727.8958235432953, $CellContext`drawBase[
+         Pattern[$CellContext`f, 
+          Blank[]], 
+         Pattern[$CellContext`wb, 
+          Blank[]], 
+         Pattern[$CellContext`\[Mu]b, 
+          Blank[]], 
+         Pattern[$CellContext`thicc, 
+          Blank[]]] := 
+       Module[{$CellContext`vert = {{$CellContext`f/
+             2, -$CellContext`wb, -($CellContext`thicc/2)}, {
+            0, $CellContext`\[Mu]b, -($CellContext`thicc/
+              2)}, {-($CellContext`f/
+              2), -$CellContext`wb, -($CellContext`thicc/2)}, {$CellContext`f/
+             2, -$CellContext`wb, $CellContext`thicc/2}, {
+            0, $CellContext`\[Mu]b, $CellContext`thicc/
+             2}, {-($CellContext`f/2), -$CellContext`wb, $CellContext`thicc/
+             2}}}, {
+          Opacity[0.6], 
+          GraphicsComplex[$CellContext`vert, 
+           
+           Polygon[{{1, 2, 3}, {4, 5, 6}, {1, 2, 5, 4}, {2, 3, 6, 5}, {3, 1, 
+             4, 6}}]]}], $CellContext`drawBase[
+         Pattern[$CellContext`f, 
+          Blank[]], 
+         Pattern[$CellContext`wb, 
+          Blank[]], 
+         Pattern[$CellContext`\[Mu]b, 
+          Blank[]], 
+         Pattern[$CellContext`thicc, 
+          Blank[]], 
+         Pattern[$CellContext`coord, 
+          Blank[]]] := 
+       Module[{$CellContext`vert = {{$CellContext`f/2 + 
+             Part[$CellContext`coord, 1], -$CellContext`wb + 
+             Part[$CellContext`coord, 2], -($CellContext`thicc/2) + 
+             Part[$CellContext`coord, 3]}, {
+            0 + Part[$CellContext`coord, 1], $CellContext`\[Mu]b + 
+             Part[$CellContext`coord, 2], -($CellContext`thicc/2) + 
+             Part[$CellContext`coord, 3]}, {-($CellContext`f/2) + 
+             Part[$CellContext`coord, 1], -$CellContext`wb + 
+             Part[$CellContext`coord, 2], -($CellContext`thicc/2) + 
+             Part[$CellContext`coord, 3]}, {$CellContext`f/2 + 
+             Part[$CellContext`coord, 1], -$CellContext`wb + 
+             Part[$CellContext`coord, 2], $CellContext`thicc/2 + 
+             Part[$CellContext`coord, 3]}, {
+            0 + Part[$CellContext`coord, 1], $CellContext`\[Mu]b + 
+             Part[$CellContext`coord, 2], $CellContext`thicc/2 + 
+             Part[$CellContext`coord, 3]}, {-($CellContext`f/2) + 
+             Part[$CellContext`coord, 1], -$CellContext`wb + 
+             Part[$CellContext`coord, 2], $CellContext`thicc/2 + 
+             Part[$CellContext`coord, 3]}}}, {
+          Opacity[0.6], 
+          GraphicsComplex[$CellContext`vert, 
+           
+           Polygon[{{1, 2, 3}, {4, 5, 6}, {1, 2, 5, 4}, {2, 3, 6, 5}, {3, 1, 
+             4, 6}}]]}], $CellContext`drawEndEffector[
+         Pattern[$CellContext`e, 
+          Blank[]], 
+         Pattern[$CellContext`wp, 
+          Blank[]], 
+         Pattern[$CellContext`\[Mu]p, 
+          Blank[]], 
+         Pattern[$CellContext`thicc, 
+          Blank[]], 
+         Pattern[$CellContext`dia, 
+          Blank[]], 
+         Pattern[$CellContext`len, 
+          Blank[]], 
+         Pattern[$CellContext`coord, 
+          Blank[]]] := 
+       Module[{$CellContext`vert = {{
+            0, -$CellContext`\[Mu]p, -($CellContext`thicc/
+              2)}, {$CellContext`e/
+             2, $CellContext`wp, -($CellContext`thicc/2)}, {-($CellContext`e/
+              2), $CellContext`wp, -($CellContext`thicc/2)}, {
+            0, -$CellContext`\[Mu]p, $CellContext`thicc/2}, {$CellContext`e/
+             2, $CellContext`wp, $CellContext`thicc/
+             2}, {-($CellContext`e/2), $CellContext`wp, $CellContext`thicc/
+             2}}}, {
+          If[Part[$CellContext`coord, 3] == 0, 
+           Return[-1, Module]], 
+          Opacity[0.6], 
+          Translate[{
+            GraphicsComplex[$CellContext`vert, 
+             
+             Polygon[{{1, 2, 3}, {4, 5, 6}, {1, 2, 5, 4}, {2, 3, 6, 5}, {3, 1,
+                4, 6}}]], Blue, 
+            Translate[
+             Rotate[{
+               
+               Cylinder[{{$CellContext`len/3, 0, 0}, {-($CellContext`len/3), 
+                  0, 0}}, $CellContext`dia], LightBlue, 
+               Sphere[{$CellContext`len/2, 0, 0}, $CellContext`dia 1.5], 
+               Sphere[{-($CellContext`len/2), 0, 0}, $CellContext`dia 1.5]}, 
+              0, {0, 0, 1}], {0, -$CellContext`\[Mu]p, 0}], Blue, 
+            Translate[
+             Rotate[{
+               
+               Cylinder[{{$CellContext`len/3, 0, 0}, {-($CellContext`len/3), 
+                  0, 0}}, $CellContext`dia], LightBlue, 
+               Sphere[{$CellContext`len/2, 0, 0}, $CellContext`dia 1.5], 
+               Sphere[{-($CellContext`len/2), 0, 0}, $CellContext`dia 1.5]}, 
+              Pi/3, {0, 0, 1}], {(-$CellContext`\[Mu]p) 
+              Cos[Pi/6], $CellContext`\[Mu]p Sin[Pi/6], 0}], Blue, 
+            Translate[
+             Rotate[{
+               
+               Cylinder[{{$CellContext`len/3, 0, 0}, {-($CellContext`len/3), 
+                  0, 0}}, $CellContext`dia], LightBlue, 
+               Sphere[{$CellContext`len/2, 0, 0}, $CellContext`dia 1.5], 
+               
+               Sphere[{-($CellContext`len/2), 0, 0}, $CellContext`dia 
+                1.5]}, -(Pi/3), {0, 0, 1}], {$CellContext`\[Mu]p 
+              Cos[Pi/6], $CellContext`\[Mu]p Sin[Pi/6], 
+              0}]}, $CellContext`coord]}], $CellContext`drawUpperArms[
+         Pattern[$CellContext`f, 
+          Blank[]], 
+         Pattern[$CellContext`wb, 
+          Blank[]], 
+         Pattern[$CellContext`rf, 
+          Blank[]], 
+         Pattern[$CellContext`\[Theta]1, 
+          Blank[]], 
+         Pattern[$CellContext`\[Theta]2, 
+          Blank[]], 
+         Pattern[$CellContext`\[Theta]3, 
+          Blank[]], 
+         Pattern[$CellContext`thicc, 
+          Blank[]], 
+         Pattern[$CellContext`dia, 
+          Blank[]], 
+         Pattern[$CellContext`len, 
+          Blank[]]] := 
+       Module[{$CellContext`elbowvert = {{
+            0, -$CellContext`wb - $CellContext`f 
+             Cos[$CellContext`\[Theta]1], (-$CellContext`f) 
+             Sin[$CellContext`\[Theta]1]}, {(Sqrt[3]/
+              2) ($CellContext`wb + $CellContext`f 
+               Cos[$CellContext`\[Theta]2]), 
+             0.5 ($CellContext`wb + $CellContext`f 
+               Cos[$CellContext`\[Theta]2]), (-$CellContext`f) 
+             Sin[$CellContext`\[Theta]2]}, {(-(Sqrt[3]/
+               2)) ($CellContext`wb + $CellContext`f 
+               Cos[$CellContext`\[Theta]3]), 
+             0.5 ($CellContext`wb + $CellContext`f 
+               Cos[$CellContext`\[Theta]3]), (-$CellContext`f) 
+             Sin[$CellContext`\[Theta]3]}}, $CellContext`servopos = {{
+            0, -$CellContext`wb, 
+             0}, {(Sqrt[3]/2) $CellContext`wb, $CellContext`wb/2, 
+             0}, {(-(Sqrt[3]/2)) $CellContext`wb, $CellContext`wb/2, 0}}}, {
+         Blue, 
+          Translate[
+           
+           Cylinder[{{$CellContext`len/2, 0, 0}, {-($CellContext`len/2), 0, 
+              0}}, $CellContext`dia], {0, -$CellContext`wb, 0}], 
+          Rotate[
+           Translate[
+            
+            Cylinder[{{$CellContext`len/2, 0, 0}, {-($CellContext`len/2), 0, 
+               0}}, $CellContext`dia], {0, $CellContext`wb, 0}], Pi/3, {0, 0, 
+           1}], 
+          Rotate[
+           Translate[
+            
+            Cylinder[{{$CellContext`len/2, 0, 0}, {-($CellContext`len/2), 0, 
+               0}}, $CellContext`dia], {0, $CellContext`wb, 0}], -(Pi/3), {0, 
+           0, 1}], LightRed, 
+          Cylinder[{
+            Part[$CellContext`servopos, 1], 
+            Part[$CellContext`elbowvert, 1]}, $CellContext`dia], 
+          Cylinder[{
+            Part[$CellContext`servopos, 2], 
+            Part[$CellContext`elbowvert, 2]}, $CellContext`dia], 
+          Cylinder[{
+            Part[$CellContext`servopos, 3], 
+            Part[$CellContext`elbowvert, 3]}, $CellContext`dia], Blue, 
+          Translate[
+           Rotate[{
+             
+             Cylinder[{{$CellContext`len/2, 0, 0}, {-($CellContext`len/2), 0, 
+                0}}, $CellContext`dia 1], LightBlue, 
+             Sphere[{$CellContext`len/2, 0, 0}, $CellContext`dia 1.5], 
+             Sphere[{-($CellContext`len/2), 0, 0}, $CellContext`dia 1.5]}, 
+            0, {0, 0, 1}], {
+            Part[$CellContext`elbowvert, 1]}], Blue, 
+          Translate[
+           Rotate[{
+             
+             Cylinder[{{$CellContext`len/2, 0, 0}, {-($CellContext`len/2), 0, 
+                0}}, $CellContext`dia 1], LightBlue, 
+             Sphere[{$CellContext`len/2, 0, 0}, $CellContext`dia 1.5], 
+             Sphere[{-($CellContext`len/2), 0, 0}, $CellContext`dia 1.5]}, -(
+             Pi/3), {0, 0, 1}], {
+            Part[$CellContext`elbowvert, 2]}], Blue, 
+          Translate[
+           Rotate[{
+             
+             Cylinder[{{$CellContext`len/2, 0, 0}, {-($CellContext`len/2), 0, 
+                0}}, $CellContext`dia 1], LightBlue, 
+             Sphere[{$CellContext`len/2, 0, 0}, $CellContext`dia 1.5], 
+             Sphere[{-($CellContext`len/2), 0, 0}, $CellContext`dia 1.5]}, Pi/
+            3, {0, 0, 1}], {
+            Part[$CellContext`elbowvert, 3]}]}], $CellContext`drawLowerArms[
+         Pattern[$CellContext`f, 
+          Blank[]], 
+         Pattern[$CellContext`e, 
+          Blank[]], 
+         Pattern[$CellContext`wb, 
+          Blank[]], 
+         Pattern[$CellContext`wp, 
+          Blank[]], 
+         Pattern[$CellContext`\[Mu]b, 
+          Blank[]], 
+         Pattern[$CellContext`\[Mu]p, 
+          Blank[]], 
+         Pattern[$CellContext`dia, 
+          Blank[]], 
+         Pattern[$CellContext`len, 
+          Blank[]], 
+         Pattern[$CellContext`coord, 
+          Blank[]], 
+         Pattern[$CellContext`\[Theta]1, 
+          Blank[]], 
+         Pattern[$CellContext`\[Theta]2, 
+          Blank[]], 
+         Pattern[$CellContext`\[Theta]3, 
+          Blank[]]] := Module[{$CellContext`platvert = {{
+             Part[$CellContext`coord, 1], 
+             Part[$CellContext`coord, 2] - $CellContext`\[Mu]p, 
+             Part[$CellContext`coord, 3]}, {
+            Part[$CellContext`coord, 1] + $CellContext`e/2, 
+             Part[$CellContext`coord, 2] + $CellContext`wp, 
+             Part[$CellContext`coord, 3]}, {
+            Part[$CellContext`coord, 1] - $CellContext`e/2, 
+             Part[$CellContext`coord, 2] + $CellContext`wp, 
+             Part[$CellContext`coord, 3]}}, $CellContext`elbowvert = {{
+            0, -$CellContext`wb - $CellContext`f 
+             Cos[$CellContext`\[Theta]1], (-$CellContext`f) 
+             Sin[$CellContext`\[Theta]1]}, {(Sqrt[3]/
+              2) ($CellContext`wb + $CellContext`f 
+               Cos[$CellContext`\[Theta]2]), 
+             0.5 ($CellContext`wb + $CellContext`f 
+               Cos[$CellContext`\[Theta]2]), (-$CellContext`f) 
+             Sin[$CellContext`\[Theta]2]}, {(-(Sqrt[3]/
+               2)) ($CellContext`wb + $CellContext`f 
+               Cos[$CellContext`\[Theta]3]), 
+             0.5 ($CellContext`wb + $CellContext`f 
+               Cos[$CellContext`\[Theta]3]), (-$CellContext`f) 
+             Sin[$CellContext`\[Theta]3]}}}, {
+          If[Part[$CellContext`coord, 3] == 0, 
+           Return[-1, Module]], LightRed, 
+          
+          Cylinder[{
+           Part[$CellContext`platvert, 1] + {$CellContext`len/2, 0, 0}, 
+            Part[$CellContext`elbowvert, 1] + {$CellContext`len/2, 0, 
+              0}}, $CellContext`dia], 
+          
+          Cylinder[{
+           Part[$CellContext`platvert, 1] + {-($CellContext`len/2), 0, 0}, 
+            Part[$CellContext`elbowvert, 1] + {-($CellContext`len/2), 0, 
+              0}}, $CellContext`dia], 
+          
+          Cylinder[{
+           Part[$CellContext`platvert, 2] + {
+             Cos[Pi/3] ($CellContext`len/2), (-Sin[Pi/3]) ($CellContext`len/
+               2), 0}, 
+            Part[$CellContext`elbowvert, 2] + {
+             Cos[Pi/3] ($CellContext`len/2), (-Sin[Pi/3]) ($CellContext`len/
+               2), 0}}, $CellContext`dia], 
+          
+          Cylinder[{
+           Part[$CellContext`platvert, 
+              2] + {(-Cos[Pi/3]) ($CellContext`len/2), 
+              Sin[Pi/3] ($CellContext`len/2), 0}, 
+            Part[$CellContext`elbowvert, 
+              2] + {(-Cos[Pi/3]) ($CellContext`len/2), 
+              Sin[Pi/3] ($CellContext`len/2), 0}}, $CellContext`dia], 
+          
+          Cylinder[{
+           Part[$CellContext`platvert, 3] + {
+             Cos[-(Pi/3)] ($CellContext`len/2), (-
+               Sin[-(Pi/3)]) ($CellContext`len/2), 0}, 
+            Part[$CellContext`elbowvert, 3] + {
+             Cos[-(Pi/3)] ($CellContext`len/2), (-
+               Sin[-(Pi/3)]) ($CellContext`len/2), 0}}, $CellContext`dia], 
+          
+          Cylinder[{
+           Part[$CellContext`platvert, 
+              3] + {(-Cos[-(Pi/3)]) ($CellContext`len/2), 
+              Sin[-(Pi/3)] ($CellContext`len/2), 0}, 
+            Part[$CellContext`elbowvert, 
+              3] + {(-Cos[-(Pi/3)]) ($CellContext`len/2), 
+              Sin[-(Pi/3)] ($CellContext`len/2), 0}}, $CellContext`dia]}]}; 
+     Typeset`initDone$$ = True),
     SynchronousInitialization->True,
     UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
     UnsavedVariables:>{Typeset`initDone$$},
@@ -415,32 +1098,82 @@ exploration of the singularities of the robot design.", Delimiter,
    Deployed->True,
    StripOnInput->False],
   Manipulate`InterpretManipulate[1]]], "Output",
- CellChangeTimes->{{3.701989437494974*^9, 3.701989487695751*^9}, {
-   3.7019895403077383`*^9, 3.7019895694927177`*^9}, {3.701989703064556*^9, 
-   3.701989705382798*^9}, {3.70198975698134*^9, 3.7019899012535467`*^9}, {
-   3.7019899370508423`*^9, 3.701989950728478*^9}, {3.701990093478801*^9, 
-   3.7019901129491463`*^9}, 3.701990312938126*^9, 3.701990386509591*^9, 
-   3.701990526544056*^9, {3.701990610207426*^9, 3.701990639728085*^9}, 
-   3.7019907965086527`*^9, 3.701990832755685*^9, {3.701990897353462*^9, 
-   3.701990949081279*^9}, {3.701990982153075*^9, 3.701991052352363*^9}, 
-   3.701991236168651*^9, {3.701991382545776*^9, 3.701991412386347*^9}, 
-   3.701991700617702*^9, {3.7019917572606897`*^9, 3.7019917971461887`*^9}, 
-   3.701991863037018*^9, 3.701991897108728*^9, 3.701991944650597*^9, 
-   3.70199200500804*^9, {3.7019921529703293`*^9, 3.70199217278275*^9}, {
-   3.701992584121129*^9, 3.701992634502941*^9}, 3.701992677451365*^9, {
-   3.701992743823719*^9, 3.70199277036086*^9}, 3.701992850670006*^9, 
-   3.701992891910954*^9, 3.701993041783972*^9, {3.701993086971149*^9, 
-   3.701993099546031*^9}, {3.70199320670807*^9, 3.701993226269903*^9}, 
-   3.701993257209504*^9, {3.7019934246741047`*^9, 3.7019935078086977`*^9}, 
-   3.7019935691569233`*^9, {3.7019937016267977`*^9, 3.7019937166840467`*^9}, {
-   3.7019938425503187`*^9, 3.701993858422113*^9}, {3.701993980150442*^9, 
-   3.701994000504198*^9}, 3.701994039302264*^9, 3.701994172548134*^9, 
-   3.701994208404982*^9, 3.7019947344493856`*^9, {3.701994778057143*^9, 
-   3.701994800357203*^9}, 3.701995607494013*^9, {3.701995657355792*^9, 
-   3.701995686413048*^9}, {3.701995731083046*^9, 3.7019957527062817`*^9}, {
-   3.701995833068617*^9, 3.701995836633831*^9}, 3.701995889922224*^9, 
-   3.7019959399029293`*^9}]
+ CellChangeTimes->{
+  3.7022221488812723`*^9, 3.702223967439505*^9, 3.702224106250784*^9, 
+   3.702224164224224*^9, 3.70222421217875*^9, 3.7022242962203903`*^9, 
+   3.7022243699715776`*^9, 3.702224507107445*^9, {3.702224593717225*^9, 
+   3.7022246215509853`*^9}, 3.7022246846663733`*^9, 3.702224717885337*^9, {
+   3.702224817711205*^9, 3.702224875073716*^9}, 3.702224927983293*^9, {
+   3.702224967949815*^9, 3.7022249837577744`*^9}, 3.702225097898574*^9, 
+   3.70222553515215*^9, {3.702225585744974*^9, 3.702225593800102*^9}, 
+   3.702225685144444*^9, {3.702225883875969*^9, 3.702225906466742*^9}, 
+   3.702225938060433*^9, 3.702225974357689*^9, 3.702226032540105*^9, 
+   3.7022261108428802`*^9, {3.702226144349069*^9, 3.702226220998373*^9}, 
+   3.702226291085959*^9, 3.7022263257861853`*^9, {3.7022264351475677`*^9, 
+   3.702226443836425*^9}}]
 }, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.702222133327179*^9, 3.702222133344452*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.702222131535323*^9, 3.702222131551034*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.702222111937078*^9, 3.702222129419766*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.702222127703332*^9, 3.702222127718462*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.7022221259194736`*^9, 3.702222125935514*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.702222123983478*^9, 3.702222123998802*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.702222119583582*^9, 3.7022221217402782`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.7020532387178097`*^9, 3.7020532422909613`*^9}, {
+   3.702053314594338*^9, 3.70205345446196*^9}, {3.702053494655031*^9, 
+   3.702053514252915*^9}, {3.702053585962144*^9, 3.702053586952578*^9}, {
+   3.702053658725528*^9, 3.702053675708387*^9}, {3.7020537131325006`*^9, 
+   3.702053741579843*^9}, {3.7020538309506063`*^9, 3.70205389454058*^9}, {
+   3.702053968930071*^9, 3.7020539968094254`*^9}, {3.7020540872283583`*^9, 
+   3.702054101544115*^9}, {3.7020542668725233`*^9, 3.70205426996824*^9}, 
+   3.702078832393423*^9}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.702083478227838*^9, 3.7020834968811073`*^9}, {
+   3.702083587191826*^9, 3.70208358979008*^9}, {3.702083728065023*^9, 
+   3.702083730305151*^9}, 3.702144428885412*^9}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.70214442739713*^9, 3.702144427401361*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.702078835583686*^9, 3.702078835589716*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.702053471702634*^9, 3.702053483844866*^9}, {
+   3.702053526236315*^9, 3.702053536109357*^9}, {3.702053798465722*^9, 
+   3.7020538051128893`*^9}, {3.702053955058832*^9, 3.702053964242097*^9}, 
+   3.702078844127294*^9}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.702078858214922*^9, 3.702078858382777*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.7020541652322598`*^9, 3.702054300790805*^9}, 
+   3.702078847535294*^9}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.702078850062768*^9, 3.70207885055308*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.702053902702429*^9, 3.7020539493078012`*^9}, 
+   3.7020788539195538`*^9}],
 
 Cell[BoxData[
  RowBox[{
@@ -915,6 +1648,15 @@ Cell[BoxData[
      RowBox[{"\[Theta]1", ",", "\[Theta]2", ",", "\[Theta]3", ",", "status"}],
       "}"}], ",", "\[IndentingNewLine]", 
     RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"z", "\[Equal]", "0"}], ",", 
+       RowBox[{"Return", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+         "Module"}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
      RowBox[{"\[Theta]1", "=", 
       RowBox[{"\[Theta]2", "=", 
        RowBox[{"\[Theta]3", "=", "0"}]}]}], ";", "\[IndentingNewLine]", 
@@ -954,7 +1696,7 @@ Cell[BoxData[
          RowBox[{"{", 
           RowBox[{
            RowBox[{"-", "1"}], ",", "\[Theta]1", ",", "\[Theta]2", ",", 
-           "\[Theta]3"}], "}"}], "]"}], "}"}]}], "]"}], ";", 
+           "\[Theta]3"}], "}"}], "]"}], "}"}], ",", "Module"}], "]"}], ";", 
      "\[IndentingNewLine]", 
      RowBox[{"If", "[", 
       RowBox[{
@@ -985,13 +1727,15 @@ Cell[BoxData[
          RowBox[{"{", 
           RowBox[{
            RowBox[{"-", "1"}], ",", "\[Theta]1", ",", "\[Theta]2", ",", 
-           "\[Theta]3"}], "}"}], "]"}], "}"}]}], "]"}], ";", 
+           "\[Theta]3"}], "}"}], "]"}], "}"}], ",", "Module"}], "]"}], ";", 
      "\[IndentingNewLine]", 
      RowBox[{"Return", "[", 
       RowBox[{"{", 
        RowBox[{
        "status", ",", "\[Theta]1", ",", "\[Theta]2", ",", "\[Theta]3"}], 
-       "}"}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}]], "Input"],
+       "}"}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.702078951299767*^9, 3.7020789573059263`*^9}, {
+  3.70208426382301*^9, 3.702084303405663*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -1306,8 +2050,9 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{
   RowBox[{"drawBase", "[", 
-   RowBox[{"f_", ",", "wb_", ",", "\[Mu]b_", ",", "thicc_"}], "]"}], ":=", 
-  "\[IndentingNewLine]", 
+   RowBox[{
+   "f_", ",", "wb_", ",", "\[Mu]b_", ",", "thicc_", ",", " ", "coord_"}], 
+   "]"}], ":=", "\[IndentingNewLine]", 
   RowBox[{"(*", " ", 
    RowBox[{"Definition", ":", " ", 
     RowBox[{
@@ -1342,35 +2087,91 @@ Cell[BoxData[
        RowBox[{
         RowBox[{"{", 
          RowBox[{
-          RowBox[{"f", "/", "2"}], ",", 
-          RowBox[{"-", "wb"}], ",", 
           RowBox[{
-           RowBox[{"-", "thicc"}], "/", "2"}]}], "}"}], ",", 
+           RowBox[{"f", "/", "2"}], "+", 
+           RowBox[{"coord", "[", 
+            RowBox[{"[", "1", "]"}], "]"}]}], ",", 
+          RowBox[{
+           RowBox[{"-", "wb"}], "+", 
+           RowBox[{"coord", "[", 
+            RowBox[{"[", "2", "]"}], "]"}]}], ",", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "thicc"}], "/", "2"}], "+", 
+           RowBox[{"coord", "[", 
+            RowBox[{"[", "3", "]"}], "]"}]}]}], "}"}], ",", 
         RowBox[{"{", 
-         RowBox[{"0", ",", "\[Mu]b", ",", 
+         RowBox[{
+          RowBox[{"0", "+", 
+           RowBox[{"coord", "[", 
+            RowBox[{"[", "1", "]"}], "]"}]}], ",", 
+          RowBox[{"\[Mu]b", "+", 
+           RowBox[{"coord", "[", 
+            RowBox[{"[", "2", "]"}], "]"}]}], ",", 
           RowBox[{
-           RowBox[{"-", "thicc"}], "/", "2"}]}], "}"}], ",", 
+           RowBox[{
+            RowBox[{"-", "thicc"}], "/", "2"}], "+", 
+           RowBox[{"coord", "[", 
+            RowBox[{"[", "3", "]"}], "]"}]}]}], "}"}], ",", 
         RowBox[{"{", 
          RowBox[{
           RowBox[{
-           RowBox[{"-", "f"}], "/", "2"}], ",", 
-          RowBox[{"-", "wb"}], ",", 
+           RowBox[{
+            RowBox[{"-", "f"}], "/", "2"}], "+", 
+           RowBox[{"coord", "[", 
+            RowBox[{"[", "1", "]"}], "]"}]}], ",", 
           RowBox[{
-           RowBox[{"-", "thicc"}], "/", "2"}]}], "}"}], ",", 
+           RowBox[{"-", "wb"}], "+", 
+           RowBox[{"coord", "[", 
+            RowBox[{"[", "2", "]"}], "]"}]}], ",", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "thicc"}], "/", "2"}], "+", 
+           RowBox[{"coord", "[", 
+            RowBox[{"[", "3", "]"}], "]"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
         RowBox[{"{", 
          RowBox[{
-          RowBox[{"f", "/", "2"}], ",", 
-          RowBox[{"-", "wb"}], ",", 
-          RowBox[{"thicc", "/", "2"}]}], "}"}], ",", 
+          RowBox[{
+           RowBox[{"f", "/", "2"}], "+", 
+           RowBox[{"coord", "[", 
+            RowBox[{"[", "1", "]"}], "]"}]}], ",", 
+          RowBox[{
+           RowBox[{"-", "wb"}], "+", 
+           RowBox[{"coord", "[", 
+            RowBox[{"[", "2", "]"}], "]"}]}], ",", 
+          RowBox[{
+           RowBox[{"thicc", "/", "2"}], "+", 
+           RowBox[{"coord", "[", 
+            RowBox[{"[", "3", "]"}], "]"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
         RowBox[{"{", 
-         RowBox[{"0", ",", "\[Mu]b", ",", 
-          RowBox[{"thicc", "/", "2"}]}], "}"}], ",", 
+         RowBox[{
+          RowBox[{"0", "+", 
+           RowBox[{"coord", "[", 
+            RowBox[{"[", "1", "]"}], "]"}]}], ",", 
+          RowBox[{"\[Mu]b", "+", 
+           RowBox[{"coord", "[", 
+            RowBox[{"[", "2", "]"}], "]"}]}], ",", 
+          RowBox[{
+           RowBox[{"thicc", "/", "2"}], "+", 
+           RowBox[{"coord", "[", 
+            RowBox[{"[", "3", "]"}], "]"}]}]}], "}"}], ",", 
         RowBox[{"{", 
          RowBox[{
           RowBox[{
-           RowBox[{"-", "f"}], "/", "2"}], ",", 
-          RowBox[{"-", "wb"}], ",", 
-          RowBox[{"thicc", "/", "2"}]}], "}"}]}], "}"}]}], "}"}], ",", 
+           RowBox[{
+            RowBox[{"-", "f"}], "/", "2"}], "+", 
+           RowBox[{"coord", "[", 
+            RowBox[{"[", "1", "]"}], "]"}]}], ",", 
+          RowBox[{
+           RowBox[{"-", "wb"}], "+", 
+           RowBox[{"coord", "[", 
+            RowBox[{"[", "2", "]"}], "]"}]}], ",", 
+          RowBox[{
+           RowBox[{"thicc", "/", "2"}], "+", 
+           RowBox[{"coord", "[", 
+            RowBox[{"[", "3", "]"}], "]"}]}]}], "}"}]}], "}"}]}], "}"}], ",", 
     "\[IndentingNewLine]", 
     RowBox[{"{", 
      RowBox[{
@@ -1391,7 +2192,10 @@ Cell[BoxData[
            RowBox[{"{", 
             RowBox[{"3", ",", "1", ",", "4", ",", "6"}], "}"}]}], "}"}], 
          "]"}]}], "]"}]}], "}"}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
- CellChangeTimes->{3.7019887883923388`*^9}],
+ CellChangeTimes->{
+  3.7019887883923388`*^9, {3.702221281962872*^9, 3.702221310344802*^9}, {
+   3.702221343497168*^9, 3.7022213824951353`*^9}, {3.702221506820333*^9, 
+   3.702221530018236*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -1466,6 +2270,15 @@ Cell[BoxData[
     "\[IndentingNewLine]", 
     RowBox[{"{", 
      RowBox[{
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"coord", "[", 
+          RowBox[{"[", "3", "]"}], "]"}], "\[Equal]", "0"}], ",", 
+        RowBox[{"Return", "[", 
+         RowBox[{
+          RowBox[{"-", "1"}], ",", "Module"}], "]"}]}], "]"}], ",", 
+      "\[IndentingNewLine]", 
       RowBox[{"Opacity", "[", "0.6", "]"}], ",", "\[IndentingNewLine]", 
       RowBox[{"Translate", "[", 
        RowBox[{
@@ -1631,7 +2444,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.7019886785802097`*^9, 3.701988685899818*^9}, 
    3.701988779463707*^9, {3.701988810482567*^9, 3.701988937493538*^9}, {
    3.7019957834094543`*^9, 3.701995790286973*^9}, {3.7019958848106213`*^9, 
-   3.701995935108281*^9}}],
+   3.701995935108281*^9}, {3.702084011801405*^9, 3.702084035560112*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -1746,7 +2559,16 @@ Cell[BoxData[
             RowBox[{"Sin", "[", "\[Theta]3", "]"}]}]}], "}"}]}], "}"}]}]}], 
      "}"}], ",", "\[IndentingNewLine]", 
     RowBox[{"{", 
-     RowBox[{"LightRed", ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"coord", "[", 
+          RowBox[{"[", "3", "]"}], "]"}], "\[Equal]", "0"}], ",", 
+        RowBox[{"Return", "[", 
+         RowBox[{
+          RowBox[{"-", "1"}], ",", "Module"}], "]"}]}], "]"}], ",", 
+      "\[IndentingNewLine]", "LightRed", ",", "\[IndentingNewLine]", 
       RowBox[{"Cylinder", "[", 
        RowBox[{
         RowBox[{"{", 
@@ -1932,10 +2754,10 @@ Cell[BoxData[
   3.7019918564026117`*^9, 3.701991940767213*^9}, {3.70199309584718*^9, 
   3.701993096205328*^9}, {3.70199319106758*^9, 3.7019932032576923`*^9}, {
   3.701995587720529*^9, 3.701995592344914*^9}, {3.701995681036766*^9, 
-  3.701995681705228*^9}}]
+  3.701995681705228*^9}, {3.702084050256857*^9, 3.70208407287965*^9}}]
 },
-WindowSize->{1252, 655},
-WindowMargins->{{-64, Automatic}, {Automatic, 10}},
+WindowSize->{1213, 655},
+WindowMargins->{{Automatic, 21}, {Automatic, 0}},
 FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, \
 2016)",
 StyleDefinitions->"Default.nb"
@@ -1952,16 +2774,32 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 11371, 239, 1020, "Input"],
-Cell[11954, 263, 11018, 178, 653, "Output"]
+Cell[580, 22, 20442, 420, 1272, "Input"],
+Cell[21025, 444, 33744, 668, 577, "Output"]
 }, Open  ]],
-Cell[22987, 444, 9690, 275, 675, "Input"],
-Cell[32680, 721, 5020, 137, 444, "Input"],
-Cell[37703, 860, 5252, 133, 327, "Input"],
-Cell[42958, 995, 11631, 308, 607, "Input"],
-Cell[54592, 1305, 3271, 88, 222, "Input"],
-Cell[57866, 1395, 9468, 238, 432, "Input"],
-Cell[67337, 1635, 11184, 299, 404, "Input"]
+Cell[54784, 1115, 92, 1, 32, "Input"],
+Cell[54879, 1118, 92, 1, 32, "Input"],
+Cell[54974, 1121, 92, 1, 32, "Input"],
+Cell[55069, 1124, 92, 1, 32, "Input"],
+Cell[55164, 1127, 94, 1, 32, "Input"],
+Cell[55261, 1130, 92, 1, 32, "Input"],
+Cell[55356, 1133, 94, 1, 32, "Input"],
+Cell[55453, 1136, 567, 8, 32, "Input"],
+Cell[56023, 1146, 215, 3, 32, "Input"],
+Cell[56241, 1151, 91, 1, 32, "Input"],
+Cell[56335, 1154, 92, 1, 32, "Input"],
+Cell[56430, 1157, 266, 4, 32, "Input"],
+Cell[56699, 1163, 92, 1, 32, "Input"],
+Cell[56794, 1166, 120, 2, 32, "Input"],
+Cell[56917, 1170, 91, 1, 32, "Input"],
+Cell[57011, 1173, 122, 2, 32, "Input"],
+Cell[57136, 1177, 9690, 275, 675, "Input"],
+Cell[66829, 1454, 5020, 137, 444, "Input"],
+Cell[71852, 1593, 5715, 144, 432, "Input"],
+Cell[77570, 1739, 11631, 308, 636, "Input"],
+Cell[89204, 2049, 5420, 148, 327, "Input"],
+Cell[94627, 2199, 9821, 247, 558, "Input"],
+Cell[104451, 2448, 11536, 308, 530, "Input"]
 }
 ]
 *)
